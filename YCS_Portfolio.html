@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YCS - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <div class="nav_box"></div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="box">
+            <span class="borderline"></span>
+            <div></div>
+        </div>
+        <h1>YAP CHUNG SENG</h1>
+        <h2>PORTFOLIO</h2>
+        <a href="#contact" class="cta-btn">Get in Touch</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="profile-picture.jpg" alt="John Smith Profile Picture">
+        <p>I am a web developer with over 5 years of experience in developing websites and web applications. My
+            expertise includes HTML, CSS, JavaScript, and various front-end frameworks such as React and Angular. I am
+            also familiar with back-end technologies such as Node.js and PHP.</p>
+        <p>In my free time, I enjoy reading books and playing video games.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <ul>
+            <li>
+                <a href="#">
+                    <img src="project-1.jpg" alt="Project 1">
+                    <h3>Project 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat odio id lorem malesuada,
+                        eget consectetur ex mollis. Duis efficitur vel nisi vel malesuada.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="project-2.jpg" alt="Project 2">
+                    <h3>Project 2</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat odio id lorem malesuada,
+                        eget consectetur ex mollis. Duis efficitur vel nisi vel malesuada.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="project-3.jpg" alt="Project 3">
+                    <h3>Project 3</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat odio id lorem malesuada,
+                        eget consectetur ex mollis. Duis efficitur vel nisi vel malesuada.</p>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+</body>
+
+</html>
