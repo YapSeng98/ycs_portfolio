@@ -11,14 +11,20 @@
 
 <body>
     <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact-info">Contact</a></li>
-        </ul>
+    <nav class="navbar">        
+        <button class="navbar-toggler" type="button" onclick="toggleNav()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse" id="navbar-collapse">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact-info">Contact</a></li>
+            </ul>
+        </div>
     </nav>
+
 
     <!-- Home Section -->
     <section id="home">
@@ -35,8 +41,12 @@
     <section id="about">
         <h2>About Me</h2>
         <img src="profile.jpg" alt="YCS Profile Picture">
-        <p>I have experience with ServiceNow and PowerApps while working at YTL Cement. My expertise includes HTML, CSS, JavaScript, and various platform such as ServiceNow and PowerApps.</p>
-        <p>I have experience developing custom applications using the ServiceNow and PowerApps platforms to meet the specific requirements of internal users. This involved analyzing user needs, designing and developing applications, testing, and implementing them. Additionally, I provided support and maintenance for existing applications.</p>
+        <p>I have experience with ServiceNow and PowerApps while working at YTL Cement. My expertise includes HTML, CSS,
+            JavaScript, and various platform such as ServiceNow and PowerApps.</p>
+        <p>I have experience developing custom applications using the ServiceNow and PowerApps platforms to meet the
+            specific requirements of internal users. This involved analyzing user needs, designing and developing
+            applications, testing, and implementing them. Additionally, I provided support and maintenance for existing
+            applications.</p>
         <p>In my free time, I enjoy reading books and exploring myself.</p>
     </section>
 
@@ -48,13 +58,21 @@
                 <li class="col-md-4">
                     <a href="#">
                         <img id="skill" src="powerApps.jpg" alt="Project 1">
-                        <p>PowerApps is a platform created by Microsoft that allows users to build custom business applications with low-code, meaning less coding knowledge is required. It provides templates, components, and connectors to make application building faster and easier. It is suitable for business users, IT professionals, and developers, and can connect to various data sources. It is ideal for organizations that need custom business applications without extensive development resources.</p>
+                        <p>PowerApps is a platform created by Microsoft that allows users to build custom business
+                            applications with low-code, meaning less coding knowledge is required. It provides
+                            templates, components, and connectors to make application building faster and easier. It is
+                            suitable for business users, IT professionals, and developers, and can connect to various
+                            data sources. It is ideal for organizations that need custom business applications without
+                            extensive development resources.</p>
                     </a>
                 </li>
                 <li class="col-md-4">
                     <a href="#">
                         <img id="skill" src="serviceNow.jpg" alt="Project 2">
-                        <p>ServiceNow is a cloud-based platform that helps organizations manage and automate their business processes, including IT service management and business process automation. It is used by many large organizations and has a user-friendly interface and flexible customization options.</p>
+                        <p>ServiceNow is a cloud-based platform that helps organizations manage and automate their
+                            business processes, including IT service management and business process automation. It is
+                            used by many large organizations and has a user-friendly interface and flexible
+                            customization options.</p>
                     </a>
                 </li>
                 <li class="col-md-4">
