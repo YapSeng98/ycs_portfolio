@@ -12,3 +12,12 @@ function scrollFunction() {
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
+
+function toggleNav() {
+    var navCollapse = document.getElementById("navbar-collapse");
+    if (navCollapse.classList.contains("open")) {
+        navCollapse.classList.remove("open");
+    } else {
+        navCollapse.classList.add("open");
+    }
+}
