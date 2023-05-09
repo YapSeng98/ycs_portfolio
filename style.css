@@ -9,11 +9,12 @@ body {
     font-family: 'Helvetica Neue', sans-serif;
     font-size: 16px;
     line-height: 1.5;
+    background-color: #e6e6e6;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
-    color: white;
+    color: black;
     margin-bottom: 1rem;
 }
 p {
@@ -42,25 +43,23 @@ nav {
     position: relative;
     border-top: 2px solid #45f3ff;
 }
-nav::before,
-nav::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 0%;
-  background-color: #45f3ff;
-  bottom: -2px;
-  transition: all 0.5s ease;
+nav::before, nav::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    background-color: #45f3ff;
+    bottom: -2px;
+    transition: all 0.5s ease;
 }
 nav::before {
-  left: 0;
+    left: 0;
 }
 nav::after {
-  right: 0;
+    right: 0;
 }
-nav:hover::before,
-nav:hover::after {
-  width: 50%;
+nav:hover::before, nav:hover::after {
+    width: 50%;
 }
 nav ul {
     display: flex;
@@ -199,7 +198,8 @@ nav ul li a {
 }
 /* About Section Styles */
 #about {
-    max-width: 960px;
+    width: 80%;
+    max-width: 1200px;
     margin: 4rem auto;
     padding: 2rem;
     background-color: #fff;
@@ -214,14 +214,29 @@ nav ul li a {
     object-position: center;
     border-radius: 5px;
 }
+#about p {
+    text-align: justify;
+}
 /* Portfolio Section Styles */
 #portfolio {
-    max-width: 960px;
-    margin: 4rem auto;
+    width: 85%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px;
+}
+#skill {
+    padding: 10px;
+}
+.skill_container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 #portfolio h2 {
-    text-align: center;
-    margin-bottom: 2rem;
+    text-align: left;
 }
 #portfolio ul {
     display: flex;
@@ -240,7 +255,10 @@ nav ul li a {
     object-fit: cover;
     object-position: center;
 }
-#portfolio 
+#portfolio p {
+    padding: 10px;
+    text-align: justify;
+}
 /* Contact Section Styles */
 #contact {
     max-width: 960px;
@@ -332,3 +350,75 @@ footer p {
         flex-basis: 100%;
    }
 }
+.contact_container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+h1 {
+    margin: 0;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    margin-bottom: 10px;
+}
+#contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+label {
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #555;
+}
+/* scoll button */
+#scrollToTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  #scrollToTopButton:hover {
+    opacity: 1;
+  }
+  #scrollToTopButton {
+    display: none;
+  }
