@@ -1,0 +1,124 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #e6e6e6;
+}
+/* Navigation Menu Styles */
+nav {
+    background-color: #333;
+    padding: 1rem;
+    position: relative;
+    border-top: 2px solid #45f3ff;
+}
+nav::before, nav::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    background-color: #45f3ff;
+    bottom: -2px;
+    transition: all 0.5s ease;
+}
+nav::before {
+    left: 0;
+}
+nav::after {
+    right: 0;
+}
+nav:hover::before, nav:hover::after {
+    width: 50%;
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: right;
+}
+nav ul li {
+    margin: 0 1rem;
+}
+nav ul li a {
+    color: #fff;
+}
+/* navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(0, 0%, 0%);
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.navbar ul {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.navbar li {
+    margin: 0 10px;
+    display: inline-block;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+.navbar a:hover {
+    color: #007bff;
+}
+#platforms {
+    width: 85%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px;
+}
+.skill_container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+#platforms h2 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0 auto;
+}
+.table thead th {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f2f2f2;
+    text-align: left;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.table tbody td {
+    font-size: 16px;
+    color: #555;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+.first_column {
+    width: 30%;
+}

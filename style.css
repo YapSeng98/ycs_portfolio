@@ -64,9 +64,9 @@ nav:hover::before, nav:hover::after {
 nav ul {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     max-width: 960px;
     margin: 0 auto;
+    text-align: right;
 }
 nav ul li {
     margin: 0 1rem;
@@ -78,33 +78,33 @@ nav ul li a {
 .navbar {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #868686;
+    background-color: hsl(0, 0%, 0%);
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .navbar ul {
-    list-style: none;
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
-    margin: 0;
+    list-style: none;
+    padding: 0;
 }
 .navbar li {
     margin: 0 10px;
+    display: inline-block;
 }
 .navbar a {
-    color: #333;
+    color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
 }
 .navbar a:hover {
     color: #007bff;
 }
-/* navbar toggler styles */
-.navbar-toggler {
+*/
+/* navbar toggler styles .navbar-toggler {
     background: none;
     border: none;
     cursor: pointer;
@@ -120,7 +120,7 @@ nav ul li a {
     display: block;
     width: 30px;
     height: 2px;
-    background-color: #333;
+    background-color: white;
     position: relative;
     transition: transform 0.3s ease-in-out;
 }
@@ -129,7 +129,7 @@ nav ul li a {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #333;
+    background-color: white;
     transition: transform 0.3s ease-in-out;
 }
 .navbar-toggler-icon:before {
@@ -288,10 +288,11 @@ nav ul li a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 #about img {
+    display: block;
     float: left;
     margin-right: 2rem;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 230px;
     object-fit: cover;
     object-position: center;
     border-radius: 5px;
@@ -300,7 +301,7 @@ nav ul li a {
     text-align: justify;
 }
 /* Portfolio Section Styles */
-#portfolio {
+#platforms {
     width: 85%;
     max-width: 1250px;
     margin: 0 auto;
@@ -308,6 +309,7 @@ nav ul li a {
 }
 #skill {
     padding: 10px;
+    width: 300px;
 }
 .skill_container {
     width: 100%;
@@ -317,39 +319,47 @@ nav ul li a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
-#portfolio h2 {
+#platforms h2 {
     text-align: left;
 }
-#portfolio ul {
-    display: flex;
+#platforms ul {
+    display: block;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-#portfolio li {
-    flex-basis: calc(33.33% - 1rem);
+#platforms li {
+   /*flex-basis: calc(33.33% - 1rem);
+   */
+    flex-basis: 100%;
     margin-bottom: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     overflow: hidden;
+    display: flex;
 }
-#portfolio li img {
+#platforms li img {
+    display: block;
+    float: left;
+    flex-basis: 30%;
+    margin-right: 20px;
     height: 200px;
     object-fit: cover;
     object-position: center;
 }
-#portfolio p {
+#platforms p {
     padding: 10px;
     text-align: justify;
 }
-/* Contact Section Styles */
-#contact {
-    max-width: 960px;
-    margin: 4rem auto;
-    text-align: center;
+/* Contact Section Styles #contact_info {
+    width: 85%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 30px;
 }
-#contact h2 {
-    margin-bottom: 2rem;
+#contact_info h2 {
+    margin-bottom: 10rem;
 }
+*/
 .form-group {
     display: flex;
     flex-direction: column;
@@ -502,4 +512,23 @@ input[type="submit"]:hover {
 }
 #scrollToTopButton {
     display: none;
+}
+.button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: lightgray;
+    color: black;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.button:hover {
+    background-color: rgb(99, 98, 98);
+    color: #ffffff;
+    cursor: pointer;
+}
+.skill_link {
+    cursor: pointer;
 }
