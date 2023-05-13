@@ -27,6 +27,9 @@ function openPowerappsSkill() {
 function openServiceNowSkill() {
   window.location.href = "serviceNow.html";
 }
+function openLinkedin() {
+  window.open('https://www.linkedin.com/in/chung-seng-yap-9478111bb', "_blank");
+}
 function sendEmail() {
   const form = document.getElementById("contact-form");
   form.addEventListener("submit", function (event) {
