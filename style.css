@@ -302,18 +302,15 @@ nav ul li a {
 }
 /* Portfolio Section Styles */
 #platforms {
-    width: 85%;
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 30px;
+    margin: 4rem auto;
 }
 #skill {
     padding: 10px;
     width: 300px;
 }
 .skill_container {
-    width: 100%;
-    max-width: 1300px;
+    width: 80%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
