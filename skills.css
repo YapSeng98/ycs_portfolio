@@ -78,10 +78,7 @@ nav ul li a {
     color: #007bff;
 }
 #platforms {
-    width: 85%;
-    max-width: 1250px;
-    margin: 0 auto;
-    padding: 30px;
+    margin: 4rem auto;
 }
 .skill_container {
     width: 100%;
