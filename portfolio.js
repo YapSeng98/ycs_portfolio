@@ -27,6 +27,9 @@ function openPowerappsSkill() {
 function openServiceNowSkill() {
   window.location.href = "serviceNow.html";
 }
+function openDecisionsSkill() {
+  window.location.href = "decisions.html";
+}
 function openLinkedin() {
   window.open('https://www.linkedin.com/in/chung-seng-yap-9478111bb', "_blank");
 }
@@ -40,6 +43,6 @@ function sendEmail() {
     const from = document.getElementById("from");
     from.value = email;
     const body = `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`;
-    window.location.href = `mailto:ycseng0398@gmail.com?subject=New message from ${name}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:ycseng0398@gmail.com?subject=New message from ${name} via Linkedin&body=${encodeURIComponent(body)}`;
   });
 }
