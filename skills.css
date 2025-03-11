@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #e6e6e6;
+    background: linear-gradient(135deg, #00FF87 0%, #00D1FF 50%, #ce49fe 100%);
 }
 /* Navigation Menu Styles */
 nav {
