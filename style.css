@@ -90,8 +90,13 @@ img {
 }
 
 @keyframes rotateBorder {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* ===== Navigation Menu Styles ===== */
@@ -180,8 +185,7 @@ nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    min-height: 100svh;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -198,6 +202,7 @@ nav ul li a {
     font-size: 3rem;
     margin-bottom: 0.5rem;
     color: white;
+    text-align: center;
     text-shadow: 2px 3px rgb(32, 113, 116);
 }
 
@@ -488,4 +493,3 @@ footer {
     padding: 2rem;
     text-align: center;
 }
-
