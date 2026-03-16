@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YCS - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script src="portfolio.js"></script>
+    <script>
+        // Fix font size issue when navigating back to main page
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -16,159 +23,147 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#platforms">Platforms</a></li>
-            <li><a href="#contact-info">Contact</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Home Section -->
     <section id="home">
-        <div class="box">
-            <span class="borderline"></span>
-            <div></div>
+        <!-- Profile Box -->
+        <div class="profile-box">
+            <div class="profile-border"></div>
+            <div class="profile-img"></div>
         </div>
+
         <h1>YAP CHUNG SENG</h1>
-        <h2>PORTFOLIO</h2>
-        <a href="#contact-info" class="cta-btn">Get in Touch</a>
+        <h2>Portfolio</h2>
+        <a href="#contact" class="cta-btn">Get in Touch</a>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <h2>About Me</h2>
-        <p><strong> February 2021 - June 2023</strong>
-            <br>
-            I hold a bachelor’s degree in Business Information Systems from UTAR, Malaysia. After completing my
-            internship at YTL Cement Shared Services SDN BHD, I chose to stay and further explore its operations, drawn
-            by the positive work environment, supportive colleagues, and the company’s focus on innovation and growth. I
-            served as a Junior Developer, where I honed my skills in application development, problem-solving, and user
-            support.
-            <br> 
-        </p>
-        <p>
-            <strong>July 2023 - Present</strong>
-            <br>
-            I have been working as an Application Developer at Activants Singapore. In this role, my
-            primary responsibility is developing a module that functions as a Business Process Management (BPM) system
-            using the Decisions platform. I collaborate closely with stakeholders to gather requirements, refine process
-            flows, and design user interfaces that align with business needs, ensuring efficiency and user satisfaction.
-            This role allows me to leverage my technical expertise and passion for creating solutions that drive
-            organizational success.
-        </p>
-        <p>
-        <h4>Skill Set:</h4>
-        <ul>
-            <li><strong>Programming Languages:</strong> HTML, CSS, JavaScript, SQL, Python</li>
-            <li><strong>Low-Code Platforms:</strong> ServiceNow, PowerApps, Decisions</li>
-            <li><strong>Application Development:</strong> Designing, developing, testing, and implementing custom
-                applications</li>
-            <li><strong>Database Development & Design:</strong> Designing and modeling database structures, writing and
-                optimizing SQL queries, and ensuring data integrity and performance
-            </li>
-            <li><strong>Business Process Management (BPM):</strong> Identifying, designing, executing, monitoring, and
-                optimizing business processes within an organization to achieve consistent, targeted results aligned
-                with its strategic goals</li>
-            <li><strong>Stakeholder Collaboration:</strong> Gathering requirements, refining processes, and designing
-                user-friendly interfaces</li>
-            <li><strong>Support & Maintenance:</strong> Providing ongoing support for existing applications</li>
-            <li><strong>Problem-Solving:</strong> Analyzing user needs and delivering tailored solutions</li>
-        </ul>
-        </p>
+        <div class="about-container">
+            <div class="about-left">
+                <h2>About Me</h2>
+
+                <div class="timeline-item">
+                    <span class="year">February 2021 – June 2023</span>
+                    <h4>Junior Developer – YTL Cement Shared Services</h4>
+                    <p>
+                        Graduated with a Bachelor’s Degree in Business Information Systems (UTAR, Malaysia).
+                        Started as an intern and continued as a Junior Developer, focusing on develop custom
+                        application development, troubleshooting, and user support.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="year">July 2023 – Present</span>
+                    <h4>Application Developer – Activants Singapore</h4>
+                    <p>
+                        Developing a Business Process Management (BPM) module using the Decisions platform.
+                        Collaborating with stakeholders to gather requirements, optimize workflows,
+                        and design efficient, user-friendly systems.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about-right">
+                <h3>Programming Languages</h3>
+                <div class="skills">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>SQL</span>
+                    <span>Python</span>
+                </div>
+                <br>
+
+                <h3>Core Competencies</h3>
+                <div class="skills">
+                    <span>Database Design</span>
+                    <span>Process Automation</span>
+                    <span>Workflow Development</span>
+                    <span>Application Support</span>
+                    <span>Troubleshooting</span>
+                    <span>SDLC</span>
+                    <span>Stakeholder Management</span>
+                    <span>Problem Solving</span>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- Platforms Section -->
     <section id="platforms">
-        <div class="skill_container">
-            <h2>Low-Code Application Development Platforms</h2>
-            <ul class="row">
-                <li class="col-md-4">
-                    <div>
-                        <img id="skill" src="power.jpg" alt="Project 1">
-                        <p>Microsoft Power Platform is a suite of low-code and no-code tools that enables users to build
-                            custom business applications, automate workflows, and analyze data. It consists of Power
-                            Apps, Power BI, Power Automate, Power Pages, and Copilot Studio, all integrated with Azure
-                            and other Microsoft products like Dynamics 365 and Microsoft 365.
-                            <a class="skill_link" onclick="openPowerappsSkill()"><b>View Project</b></a>
-                        </p>
-                    </div>
-                </li>
-                <li class="col-md-4">
-                    <div>
-                        <img id="skill" src="serviceNow.jpg" alt="Project 2">
-                        <p>ServiceNow is a cloud-based platform that helps organizations manage and automate their
-                            business processes, including IT service management and business process automation. It is
-                            used by many large organizations and has a user-friendly interface and flexible
-                            customization options.
-                            <a class="skill_link" onclick="openServiceNowSkill()"><b>View Project</b></a>
-                        </p>
-                    </div>
-                </li>
-                <li class="col-md-4">
-                    <div>
-                        <img id="skill" src="decisions.jpeg" alt="Project 3">
-                        <p>Decisions is a no-code automation platform that simplifies business processes through
-                            workflows, rules, and integrations. It offers tools for creating Flows, Forms, and
-                            Dashboards, and supports use cases like Approval Tracking, Rule-Based Evaluations, and
-                            Document Processing. With seamless REST API integration and a web-based design compatible
-                            with browsers like Edge and Chrome, Decisions enhances efficiency and decision-making,
-                            making it a versatile solution for businesses.
-                            <a class="skill_link" onclick="openDecisionsSkill()"><b>View Project</b></a>
-                        </p>
-                    </div>
-                </li>
-            </ul>
+        <h2>Low-Code & No-Code Platforms</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="power.jpg" alt="Power Platform">
+                <h3>Microsoft Power Platform</h3>
+                <p>Power Apps, Power Automate, Power BI for automation and analytics.</p>
+                <a href="powerApps.html" class="btn">View Project</a>
+            </div>
+
+            <div class="card">
+                <img src="serviceNow.jpg" alt="ServiceNow">
+                <h3>ServiceNow Platform</h3>
+                <p>Cloud IT service management and business process automation platform.</p>
+                <a href="serviceNow.html" class="btn">View Project</a>
+            </div>
+
+            <div class="card">
+                <img src="decisions.jpeg" alt="Decisions">
+                <h3>Decisions Platform</h3>
+                <p>No-code automation platform for workflows, approvals, and integrations.</p>
+                <a href="decisions.html" class="btn">View Project</a>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact-info">
-        <div class="contact_container">
-            <h2>How to Reach Me</h2>
-            <ul>
-                <li><strong>Email:</strong> ycseng0398@gmail.com</li>
-                <li><strong>Phone:</strong> +6017-5810599 / +65-98996682</li>
-                <li><strong>Address:</strong> Perak, Malaysia</li>
-                <li><strong>Current Work:</strong> Application Developer at Activants, Singapore</li>
-                <li><strong>Linkedin:</strong> <a class="skill_link" onclick="openLinkedin()">Chung Seng Yap</a></li>
-            </ul>
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>How to Reach Me</h2>
+                <p><strong>Email:</strong> yceng038@gmail.com</p>
+                <p><strong>Phone:</strong> +6017-5810599 / +65-98996682</p>
+                <p><strong>Address:</strong> Perak, Malaysia</p>
+                <p><strong>Current Work:</strong> Application Developer at Activants, Singapore</p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/chung-seng-yap-9478111bb/" target="_blank">Chung Seng Yap</a></p>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Me a Message</h2>
+                <form action="mailto:yceng038@gmail.com" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn-dark">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <section id="contact-form">
-        <div class="contact_container">
-            <h2>Send me a Message</h2>
-            <p>If you have any questions or would like to connect, please feel free to send me a message using the form
-                below.</p>
-            <form id="contact-form" method="POST">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="hidden" id="from" name="from" value="">
-                </div>
-                <div class="form-group">
-                    <input type="submit" onclick="sendEmail()" value="Send Message">
-                </div>
-            </form>
-        </div>
-    </section>
-
+    <!-- Scroll to Top -->
     <button id="scrollToTopButton" onclick="scrollToTop()">&#8593;</button>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 My Website. All rights reserved.</p>
+        <p>&copy; 2026 YCS Portfolio. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Scroll to Top
+        const scrollToTopButton = document.getElementById('scrollToTopButton');
+
+        window.addEventListener('scroll', () => {
+            scrollToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 
-
 </html>
-
-
