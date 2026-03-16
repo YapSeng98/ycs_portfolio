@@ -180,8 +180,10 @@ nav ul li a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;  /* changed */
-    padding-top: 70px;  /* added */
+
+    min-height: 100svh;   /* Mobile-safe viewport */
+    padding-top: 70px;
+
     overflow: hidden;
 }
 
