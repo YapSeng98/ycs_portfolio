@@ -6,14 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YCS - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        // Fix font size issue when navigating back to main page
-        window.addEventListener('pageshow', function (event) {
-            if (event.persisted) {
-                window.location.reload();
-            }
-        });
-    </script>
 </head>
 
 <body>
@@ -35,12 +27,10 @@
 
     <!-- Home Section -->
     <section id="home">
-        <!-- Profile Box -->
         <div class="profile-box">
             <div class="profile-border"></div>
             <div class="profile-img"></div>
         </div>
-
         <h1>YAP CHUNG SENG</h1>
         <h2>Portfolio</h2>
         <a href="#contact" class="cta-btn">Get in Touch</a>
@@ -51,49 +41,27 @@
         <div class="about-container">
             <div class="about-left">
                 <h2>About Me</h2>
-
                 <div class="timeline-item">
-                    <span class="year">February 2021 – June 2023</span>
+                    <span class="year">Feb 2021 – Jun 2023</span>
                     <h4>Junior Developer – YTL Cement Shared Services</h4>
-                    <p>
-                        Graduated with a Bachelor’s Degree in Business Information Systems (UTAR, Malaysia).
-                        Started as an intern and continued as a Junior Developer, focusing on develop custom
-                        application development, troubleshooting, and user support.
-                    </p>
+                    <p>Graduated with a Bachelor’s Degree in Business Information Systems (UTAR, Malaysia). Started as an intern and continued as a Junior Developer, focusing on application development and support.</p>
                 </div>
-
                 <div class="timeline-item">
-                    <span class="year">July 2023 – Present</span>
+                    <span class="year">Jul 2023 – Present</span>
                     <h4>Application Developer – Activants Pte Ltd</h4>
-                    <p>
-                        Developing a Business Process Management (BPM) module using the Decisions platform.
-                        Collaborating with stakeholders to gather requirements, optimize workflows,
-                        and design efficient, user-friendly systems.
-                    </p>
+                    <p>Developing a BPM module using Decisions platform. Collaborating with stakeholders to optimize workflows and design user-friendly systems.</p>
                 </div>
             </div>
-
             <div class="about-right">
                 <h3>Programming Languages</h3>
                 <div class="skills">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                    <span>SQL</span>
-                    <span>Python</span>
+                    <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>SQL</span><span>Python</span>
                 </div>
-                <br>
-
                 <h3>Core Competencies</h3>
                 <div class="skills">
-                    <span>Database Design</span>
-                    <span>Process Automation</span>
-                    <span>Workflow Development</span>
-                    <span>Application Support</span>
-                    <span>Troubleshooting</span>
-                    <span>SDLC</span>
-                    <span>Stakeholder Management</span>
-                    <span>Problem Solving</span>
+                    <span>Database Design</span><span>Process Automation</span><span>Workflow Development</span>
+                    <span>Application Support</span><span>Troubleshooting</span><span>SDLC</span>
+                    <span>Stakeholder Management</span><span>Problem Solving</span>
                 </div>
             </div>
         </div>
@@ -109,14 +77,12 @@
                 <p>Power Apps, Power Automate, Power BI for automation and analytics.</p>
                 <a href="powerApps.html" class="btn">View Project</a>
             </div>
-
             <div class="card">
                 <img src="serviceNow.jpg" alt="ServiceNow">
                 <h3>ServiceNow Platform</h3>
                 <p>Cloud IT service management and business process automation platform.</p>
                 <a href="serviceNow.html" class="btn">View Project</a>
             </div>
-
             <div class="card">
                 <img src="decisions.jpeg" alt="Decisions">
                 <h3>Decisions Platform</h3>
@@ -136,12 +102,9 @@
                 <p><strong>Address:</strong> Perak, Malaysia</p>
                 <p><strong>Current Work:</strong> Application Developer at Activants, Singapore</p>
                 <p><strong>LinkedIn:</strong>
-                    <a href="https://www.linkedin.com/in/chung-seng-yap-9478111bb/" target="_blank">
-                        Chung Seng Yap
-                    </a>
+                    <a href="https://www.linkedin.com/in/chung-seng-yap-9478111bb/" target="_blank">Chung Seng Yap</a>
                 </p>
             </div>
-
             <div class="contact-form">
                 <h2>Send Me a Message</h2>
                 <form action="mailto:yceng038@gmail.com" method="post" enctype="text/plain">
@@ -154,33 +117,30 @@
         </div>
     </section>
 
-    <!-- Scroll to Top -->
-    <button id="scrollToTopButton" onclick="scrollToTop()">&#8593;</button>
-
     <!-- Footer -->
     <footer>
         <p>&copy; 2026 YCS Portfolio. All rights reserved.</p>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        const scrollToTopButton = document.getElementById('scrollToTopButton');
-
-        window.addEventListener('scroll', () => {
-            scrollToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        // Burger Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links a');
 
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            menuToggle.classList.toggle('open'); // optional, for animated burger
+            menuToggle.classList.toggle('open');
+        });
+
+        // Close menu after clicking a link
+        navItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('open');
+            });
         });
     </script>
-
 </body>
-
 </html>
