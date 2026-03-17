@@ -220,6 +220,7 @@ nav ul li a {
 }
 
 /* Mobile responsive */
+/* ===== Mobile Horizontal Menu ===== */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
@@ -227,20 +228,29 @@ nav ul li a {
 
     .nav-links {
         position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 60%;
-        background: rgba(0,0,0,0.95);
-        flex-direction: column;
-        align-items: center;
+        top: 60px;            /* below navbar */
+        right: 0;
+        width: 100%;
+        height: auto;         /* auto height */
+        flex-direction: row;  /* horizontal */
         justify-content: center;
-        gap: 3rem;
-        transition: right 0.3s ease;
+        align-items: center;
+        gap: 1.5rem;
+        background: rgba(0,0,0,0.95);
+        padding: 1rem 0;
+        overflow-x: auto;     /* scroll if needed */
+        white-space: nowrap;  /* keep links in one row */
+        transform: translateY(-150%); /* hide by default */
+        transition: transform 0.3s ease;
+        z-index: 999;
     }
 
     .nav-links.active {
-        right: 0;
+        transform: translateY(0); /* slide down */
+    }
+
+    .nav-links a {
+        font-size: 18px;
     }
 }
 
