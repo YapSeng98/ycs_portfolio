@@ -21,7 +21,7 @@
     <nav class="navbar">
         <div class="logo">YCS</div>
         <ul class="nav-links">
-            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#platforms">Platforms</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -172,6 +172,13 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.classList.toggle('open'); // optional, for animated burger
+        });
     </script>
 
 </body>
