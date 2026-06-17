@@ -173,20 +173,40 @@ onScroll();
 /* ===== Hamburger Menu ===== */
 const menuToggle = document.getElementById('menu-toggle');
 const navList = document.querySelector('.nav-links');
+const navOverlay = document.getElementById('nav-overlay');
+
+function closeNav() {
+    navList && navList.classList.remove('active');
+    menuToggle && menuToggle.classList.remove('open');
+    navOverlay && navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function openNav() {
+    navList && navList.classList.add('active');
+    menuToggle && menuToggle.classList.add('open');
+    navOverlay && navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
 if (menuToggle && navList) {
     menuToggle.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        menuToggle.classList.toggle('open');
+        navList.classList.contains('active') ? closeNav() : openNav();
     });
 
     navList.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            navList.classList.remove('active');
-            menuToggle.classList.remove('open');
-        });
+        a.addEventListener('click', closeNav);
     });
 }
+
+if (navOverlay) {
+    navOverlay.addEventListener('click', closeNav);
+}
+
+/* Close nav on Escape key */
+document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeNav();
+});
 
 /* ===== Scroll to Top ===== */
 function scrollToTop() {
