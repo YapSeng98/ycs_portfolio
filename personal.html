@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Projects — YCS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="skills.css">
+</head>
+
+<body>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo">YCS<span class="logo-dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#platforms">Platforms</a></li>
+            <li><a href="index.html#personal">Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main class="page-main">
+
+        <div class="page-header">
+            <a href="index.html#personal" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Projects
+            </a>
+            <span class="page-tag">Self Exploration</span>
+            <h1>Personal Projects</h1>
+            <p class="page-desc">Self-initiated projects built outside of client work to explore emerging technologies, experiment with AI integrations, and deepen full-stack development skills.</p>
+        </div>
+
+        <!-- ===== Featured: ServiceNow × Claude AI ===== -->
+        <div class="featured-project" id="sn-claude">
+
+            <div class="featured-header">
+                <div class="featured-badge">
+                    <i class="fas fa-robot"></i> AI Integration · Self Exploration
+                </div>
+                <h3>ServiceNow × Claude AI — Natural Language Interface</h3>
+                <p class="featured-desc">
+                    A self-built web application that bridges ServiceNow with Claude AI (Anthropic API), letting users interact with ServiceNow records using plain English commands instead of navigating the portal.
+                    This project explores the potential of large language models as an intelligent interface layer over enterprise REST APIs — combining my ServiceNow expertise with hands-on AI agent development.
+                </p>
+            </div>
+
+            <!-- Architecture Diagram -->
+            <div class="arch-diagram">
+                <p class="arch-title"><i class="fas fa-sitemap"></i>&nbsp;&nbsp;System Architecture</p>
+
+                <div class="arch-nodes">
+                    <div class="arch-node node-web">
+                        <i class="fas fa-display"></i>
+                        <span class="node-name">Web App</span>
+                        <span class="node-tech">HTML / CSS / JS</span>
+                    </div>
+                    <div class="arch-connector">
+                        <span class="conn-arrow">⟶</span>
+                        <span class="conn-label">user query</span>
+                    </div>
+                    <div class="arch-node node-proxy">
+                        <i class="fas fa-shield-halved"></i>
+                        <span class="node-name">Proxy Layer</span>
+                        <span class="node-tech">Node.js / Express</span>
+                    </div>
+                    <div class="arch-connector">
+                        <span class="conn-arrow">⟶</span>
+                        <span class="conn-label">prompt + context</span>
+                    </div>
+                    <div class="arch-node node-ai">
+                        <i class="fas fa-brain"></i>
+                        <span class="node-name">Claude AI</span>
+                        <span class="node-tech">Anthropic API</span>
+                    </div>
+                    <div class="arch-connector">
+                        <span class="conn-arrow">⟶</span>
+                        <span class="conn-label">API params</span>
+                    </div>
+                    <div class="arch-node node-sn">
+                        <i class="fas fa-server"></i>
+                        <span class="node-name">ServiceNow</span>
+                        <span class="node-tech">Scripted REST API</span>
+                    </div>
+                </div>
+
+                <div class="arch-return-row">
+                    <span class="arch-return-label">
+                        <i class="fas fa-rotate-left"></i> Response path: ServiceNow raw data → Claude AI formats → Web App displays
+                    </span>
+                </div>
+
+                <div class="arch-steps">
+                    <div class="arch-step">
+                        <span class="step-num">1</span>
+                        <p><strong>User Query</strong> — User types a plain English command in the web interface, e.g. <em>"Show all open P1 incidents assigned to my team this week"</em> or <em>"Create a high priority incident for the email server being down."</em></p>
+                    </div>
+                    <div class="arch-step">
+                        <span class="step-num">2</span>
+                        <p><strong>Secure Proxy</strong> — The Node.js proxy layer receives the request and forwards it to Claude API with a structured system prompt containing ServiceNow API context, table schemas, and output format rules — keeping credentials off the browser.</p>
+                    </div>
+                    <div class="arch-step">
+                        <span class="step-num">3</span>
+                        <p><strong>Claude AI — Intent Parsing</strong> — Claude interprets the user's intent and outputs a structured JSON object containing the target ServiceNow table, encoded filter query, selected fields, and HTTP method (GET / POST / PATCH).</p>
+                    </div>
+                    <div class="arch-step">
+                        <span class="step-num">4</span>
+                        <p><strong>ServiceNow REST API Call</strong> — The proxy uses Claude's output to construct and execute the ServiceNow Scripted REST API call, retrieving or mutating the relevant records on the developer instance (PDI).</p>
+                    </div>
+                    <div class="arch-step">
+                        <span class="step-num">5</span>
+                        <p><strong>Claude AI — Response Formatting</strong> — The raw API JSON is passed back to Claude, which formats it into a clean, human-readable summary, table, or confirmation message tailored to what the user asked.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two-column features -->
+            <div class="featured-features">
+                <div class="feat-col">
+                    <h4><i class="fas fa-code"></i> What It Does</h4>
+                    <ul>
+                        <li>Natural language interface to query, create, and update ServiceNow records without portal access</li>
+                        <li>Claude AI dynamically constructs the correct ServiceNow table, filter query, and REST method</li>
+                        <li>Supports incident queries, change request creation, and knowledge base search</li>
+                        <li>AI-formatted responses — readable summaries and tables instead of raw JSON</li>
+                        <li>Live integration with a personal ServiceNow developer instance (PDI)</li>
+                        <li>Secure Node.js proxy layer keeps Anthropic and ServiceNow credentials off the client</li>
+                        <li>Error handling with fallback messages when Claude output fails validation</li>
+                    </ul>
+                </div>
+                <div class="feat-col">
+                    <h4><i class="fas fa-lightbulb"></i> What I Learned</h4>
+                    <ul>
+                        <li>How to craft effective system prompts that constrain Claude's output to valid API parameters</li>
+                        <li>ServiceNow Scripted REST API — creating custom endpoints, encoded filters, and field queries</li>
+                        <li>Designing a reliable JSON output schema for LLMs to follow consistently across varied inputs</li>
+                        <li>Building a backend proxy to orchestrate multi-step AI + API calls securely</li>
+                        <li>Handling edge cases where AI output must be validated before hitting external systems</li>
+                        <li>The practical power — and limits — of combining LLMs with structured enterprise REST APIs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-tags">
+                <span>Claude API</span>
+                <span>ServiceNow PDI</span>
+                <span>Scripted REST API</span>
+                <span>Node.js</span>
+                <span>JavaScript</span>
+                <span>Prompt Engineering</span>
+                <span>AI Agent</span>
+                <span>Natural Language UI</span>
+            </div>
+        </div>
+
+        <!-- ===== Personal Money Tracker ===== -->
+        <div class="projects-section" id="pfmt">
+            <h2 class="projects-heading"><i class="fas fa-folder-open"></i> Other Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card featured-second">
+                    <div class="feat2-header">
+                        <div class="feat2-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div>
+                            <h3>Personal Finance Money Tracker</h3>
+                            <span class="feat2-sub">PFMT · Hosted on GitHub Pages</span>
+                        </div>
+                    </div>
+                    <p>A full-featured personal finance web application that uses <strong>ServiceNow as its cloud backend</strong> via Scripted REST APIs — demonstrating real-world use of ServiceNow beyond enterprise workflows. Tracks transactions, budgets, savings goals, and spending analytics with local-first optimistic sync and optional Groq AI insights.</p>
+                    <ul>
+                        <li>Transaction tracking — income, expenses, and transfers across multiple accounts</li>
+                        <li>Budget management with category-level tracking and real-time spent calculations</li>
+                        <li>Savings goals with visual progress monitoring</li>
+                        <li>Spending analytics and category breakdowns</li>
+                        <li>Optimistic local updates (localStorage) with async ServiceNow cloud sync</li>
+                        <li>Custom token-based authentication with 7-day session and 4-digit PIN lock</li>
+                        <li>Recurring transaction automation via ServiceNow scheduled flows</li>
+                        <li>Monthly budget reset workflow running on ServiceNow</li>
+                        <li>Optional Groq AI integration for spending insights and suggestions</li>
+                        <li>Automated CI/CD pipeline via GitHub Actions for build and deployment</li>
+                        <li>Fully hosted and publicly accessible on GitHub Pages</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>HTML5 / CSS3 / JS</span>
+                        <span>ServiceNow PDI</span>
+                        <span>Scripted REST API</span>
+                        <span>Groq AI</span>
+                        <span>GitHub Actions</span>
+                        <span>GitHub Pages</span>
+                        <span>LocalStorage Sync</span>
+                        <span>CI/CD</span>
+                    </div>
+                    <a href="https://github.com/YapSeng98/Personal-Money-Tracker" target="_blank" rel="noopener" class="proj-github-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTopButton" onclick="scrollToTop()" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>
