@@ -499,6 +499,32 @@ section { padding: 110px 2rem; }
     margin: 0;
 }
 
+.timeline-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 12px;
+}
+
+.timeline-content ul li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 0.845rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+}
+
+.timeline-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 8px;
+    width: 5px; height: 5px;
+    background: var(--primary);
+    border-radius: 50%;
+    opacity: 0.55;
+}
+
 /* Skills Card */
 .skills-card {
     background: var(--bg-card);
