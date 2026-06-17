@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YCS — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">YCS<span class="logo-dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#platforms" class="nav-link">Platforms</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <canvas id="particle-canvas"></canvas>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for opportunities
+            </div>
+            <div class="profile-box">
+                <div class="profile-img"></div>
+            </div>
+            <h1 class="hero-name">Yap Chung Seng</h1>
+            <div class="typing-container">
+                <span class="typing-prefix">I'm a </span><span id="typing-text"></span><span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-desc">Application Developer crafting intelligent workflows and business process automation solutions across enterprise platforms.</p>
+            <div class="hero-actions">
+                <a href="#platforms" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-top"><span class="stat-num" data-target="5">0</span><span class="stat-suffix">+</span></div>
+                    <span class="stat-label">Years Exp.</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-top"><span class="stat-num" data-target="10">0</span><span class="stat-suffix">+</span></div>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-top"><span class="stat-num" data-target="3">0</span></div>
+                    <span class="stat-label">Platforms</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header reveal">
+            <span class="section-tag">Who I Am</span>
+            <h2>About Me</h2>
+        </div>
+        <div class="about-container">
+            <div class="about-left reveal">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">Feb 2021 – Jun 2023</span>
+                            <h4>Junior Developer</h4>
+                            <span class="timeline-company"><i class="fas fa-building"></i> YTL Cement Shared Services</span>
+                            <p>Started as an intern and grew into a Junior Developer role. Focused on application development, Microsoft Power Platform solutions, and business process support throughout the engagement.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot active"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-year">Jul 2023 – Present</span>
+                            <h4>Application Developer</h4>
+                            <span class="timeline-company"><i class="fas fa-building"></i> Activants Pte Ltd, Singapore</span>
+                            <p>Designing and developing full BPM modules on the Decisions platform. Collaborating with stakeholders to optimize complex approval workflows, integrating systems with SAP, and supporting UAT cycles.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-right reveal">
+                <div class="skills-card">
+                    <h3><i class="fas fa-code"></i> Tech Stack</h3>
+                    <div class="skill-group">
+                        <span class="skill-label">Languages</span>
+                        <div class="skills-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <span class="skill-label">Competencies</span>
+                        <div class="skills-tags">
+                            <span class="tag">Database Design</span>
+                            <span class="tag">Process Automation</span>
+                            <span class="tag">Workflow Development</span>
+                            <span class="tag">Application Support</span>
+                            <span class="tag">SDLC</span>
+                            <span class="tag">Stakeholder Management</span>
+                            <span class="tag">Troubleshooting</span>
+                            <span class="tag">Problem Solving</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <span class="skill-label">Education</span>
+                        <div class="edu-item">
+                            <span class="edu-title">Bachelor's in Business Information Systems</span>
+                            <span class="edu-school"><i class="fas fa-graduation-cap"></i> UTAR, Malaysia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section id="platforms">
+        <div class="platforms-inner">
+            <div class="section-header reveal">
+                <span class="section-tag">What I Build With</span>
+                <h2>Low-Code &amp; No-Code Platforms</h2>
+            </div>
+            <div class="card-grid">
+                <div class="platform-card reveal">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <img src="power.jpg" alt="Power Platform">
+                    </div>
+                    <div class="card-body">
+                        <h3>Microsoft Power Platform</h3>
+                        <p>Power Apps, Power Automate, and Power BI for building enterprise automation, portals, and analytics dashboards.</p>
+                        <div class="card-tags">
+                            <span>Power Apps</span>
+                            <span>Power Automate</span>
+                            <span>SharePoint</span>
+                        </div>
+                    </div>
+                    <a href="powerApps.html" class="card-btn">View Projects <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="platform-card reveal">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <img src="serviceNow.jpg" alt="ServiceNow">
+                    </div>
+                    <div class="card-body">
+                        <h3>ServiceNow Platform</h3>
+                        <p>Cloud IT service management and business process automation — from portals to mobile-first workflows with QR scanning.</p>
+                        <div class="card-tags">
+                            <span>ITSM</span>
+                            <span>Flow Designer</span>
+                            <span>Now Mobile</span>
+                        </div>
+                    </div>
+                    <a href="serviceNow.html" class="card-btn">View Projects <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="platform-card reveal">
+                    <div class="card-glow"></div>
+                    <div class="card-icon">
+                        <img src="decisions.jpeg" alt="Decisions">
+                    </div>
+                    <div class="card-body">
+                        <h3>Decisions Platform</h3>
+                        <p>End-to-end BPM development with SAP integration — complex approval matrices, invoice automation, and real-time data sync.</p>
+                        <div class="card-tags">
+                            <span>BPM</span>
+                            <span>SAP Integration</span>
+                            <span>Workflow</span>
+                        </div>
+                    </div>
+                    <a href="decisions.html" class="card-btn">View Projects <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header reveal">
+            <span class="section-tag">Let's Connect</span>
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info reveal">
+                <h3>Let's build something together</h3>
+                <p>Whether you have a project in mind, want to discuss automation, or just want to say hi — my inbox is always open.</p>
+                <div class="contact-links">
+                    <a href="mailto:yceng038@gmail.com" class="contact-link">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="contact-link-label">Email</span>
+                            <span class="contact-link-value">yceng038@gmail.com</span>
+                        </div>
+                    </a>
+                    <a href="tel:+60175810599" class="contact-link">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <span class="contact-link-label">Phone (MY)</span>
+                            <span class="contact-link-value">+6017-5810599</span>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/chung-seng-yap-9478111bb/" target="_blank" rel="noopener" class="contact-link">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div>
+                            <span class="contact-link-label">LinkedIn</span>
+                            <span class="contact-link-value">Chung Seng Yap</span>
+                        </div>
+                    </a>
+                    <div class="contact-link no-hover">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <span class="contact-link-label">Location</span>
+                            <span class="contact-link-value">Perak, Malaysia · Singapore</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrap reveal">
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project Inquiry">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">YCS<span>.</span></div>
+            <p>Crafted with passion. Built for impact.</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chung-seng-yap-9478111bb/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/YapSeng98" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:yceng038@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scrollToTopButton" onclick="scrollToTop()" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>

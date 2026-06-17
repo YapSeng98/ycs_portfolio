@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decisions Platform — YCS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="skills.css">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo">YCS<span class="logo-dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#platforms">Platforms</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main class="page-main">
+        <div class="page-header">
+            <a href="index.html#platforms" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Platforms
+            </a>
+            <span class="page-tag">Platform</span>
+            <h1>Decisions Platform</h1>
+            <p class="page-desc">Gathered and analyzed user requirements, designed database schemas and system architecture, developed end-to-end BPM modules, integrated with SAP, collaborated with users on requirement-based enhancements, supported UAT, and performed ongoing system maintenance and optimization.</p>
+        </div>
+
+        <div class="projects-section">
+            <h2 class="projects-heading"><i class="fas fa-folder-open"></i> Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <h3>Bill Adjustment and Waiver</h3>
+                    <p>A finance system to capture, record, and process billing requests with a complex multi-level approval matrix.</p>
+                    <ul>
+                        <li>Bulk or manual billing data entry</li>
+                        <li>User-friendly worklist for tracking and approvals</li>
+                        <li>Structured approval process with workflow routing</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Decisions</span>
+                        <span>BPM</span>
+                        <span>Finance</span>
+                        <span>Approval Matrix</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Recurring Billing System</h3>
+                    <p>Automates invoice generation based on user-defined billing periods and integrates with SAP for real-time updates.</p>
+                    <ul>
+                        <li>Complex approval workflow</li>
+                        <li>Invoice forms generated per billing cycle</li>
+                        <li>Real-time SAP data integration</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Decisions</span>
+                        <span>SAP Integration</span>
+                        <span>Invoice Automation</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTopButton" onclick="scrollToTop()" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>

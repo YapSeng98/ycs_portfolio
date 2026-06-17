@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft Power Platform — YCS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="skills.css">
+</head>
+
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="logo">YCS<span class="logo-dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html#home">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#platforms">Platforms</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <main class="page-main">
+        <div class="page-header">
+            <a href="index.html#platforms" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Platforms
+            </a>
+            <span class="page-tag">Platform</span>
+            <h1>Microsoft Power Platform</h1>
+            <p class="page-desc">Collaborate with team to understand system design, develop custom applications, troubleshoot issues raised by Business Analysts or Project Managers, and ensure timely project delivery.</p>
+        </div>
+
+        <div class="projects-section">
+            <h2 class="projects-heading"><i class="fas fa-folder-open"></i> Projects</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <h3>SAP Service Helpdesk</h3>
+                    <p>A support system with Authorization, Incident, and Change modules to help customers resolve SAP-related issues.</p>
+                    <ul>
+                        <li>Raise SAP support tickets via Power Apps</li>
+                        <li>Data stored in SharePoint</li>
+                        <li>Approval process integrated into the workflow</li>
+                        <li>Send email reminders to approvers via Power Automate</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Power Apps</span>
+                        <span>SharePoint</span>
+                        <span>Power Automate</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>TP DMS</h3>
+                    <p>A document management system for storing company files, projects, vendors, and contract prefix in SharePoint with standardized naming.</p>
+                    <ul>
+                        <li>Stores data and documents in SharePoint</li>
+                        <li>Automatically renames PDF files based on defined formats</li>
+                        <li>Organizes files by company and category</li>
+                    </ul>
+                    <div class="project-tags">
+                        <span>Power Apps</span>
+                        <span>SharePoint</span>
+                        <span>PDF Automation</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+    </footer>
+
+    <button id="scrollToTopButton" onclick="scrollToTop()" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>
