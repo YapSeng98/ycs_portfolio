@@ -20,7 +20,7 @@ A modern, dark-themed portfolio built with vanilla HTML, CSS, and JavaScript. Fe
 | `serviceNow.html` | ServiceNow platform — 6 project cards |
 | `powerApps.html` | Microsoft Power Platform — 2 project cards |
 | `decisions.html` | Decisions BPM platform — 2 project cards |
-| `personal.html` | Personal projects — ServiceNow × Claude AI integration, PFMT |
+| `personal.html` | Personal projects — ServiceNow × Claude AI integration, PFMT, Personal Planning System, Shared Rewards Tracker |
 
 ---
 
@@ -112,6 +112,8 @@ Three platform cards linking to dedicated project pages:
 ### Personal Projects
 - **ServiceNow × Claude AI** — Natural language interface to ServiceNow using Anthropic API + Node.js proxy, with a CSS architecture diagram showing the full integration flow
 - **Personal Finance Money Tracker (PFMT)** — Full-stack web app using ServiceNow PDI as cloud backend via Scripted REST APIs, with Groq AI integration and GitHub Actions CI/CD
+- **Personal Planning System** — Offline-first PWA for hierarchical goal planning (Vision → Year → Quarter → Month → Week → Day) built on React + TypeScript, synced to ServiceNow
+- **Shared Rewards Tracker** — Gamified points-and-rewards app for two connected accounts with a real-time shared virtual space, built on vanilla JS and a ServiceNow REST API backend
 
 ### Contact
 Split layout with contact details (email, phone MY/SG, LinkedIn, location) and a mailto-backed contact form.
