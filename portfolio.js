@@ -137,6 +137,15 @@ const revealObs = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
+/* ===== Project Card Cursor Spotlight ===== */
+document.querySelectorAll('.personal-tile, .project-card, .platform-card').forEach(tile => {
+    tile.addEventListener('mousemove', e => {
+        const r = tile.getBoundingClientRect();
+        tile.style.setProperty('--mx', `${(e.clientX - r.left) / r.width * 100}%`);
+        tile.style.setProperty('--my', `${(e.clientY - r.top) / r.height * 100}%`);
+    });
+});
+
 /* ===== Active Nav + Scrolled State ===== */
 const navbar = document.getElementById('navbar');
 const sections = document.querySelectorAll('section[id]');

@@ -180,7 +180,7 @@
                 <h2>Low-Code &amp; No-Code Platforms</h2>
             </div>
             <div class="card-grid">
-                <div class="platform-card reveal">
+                <div class="platform-card platform-card-power reveal">
                     <div class="card-glow"></div>
                     <div class="card-icon">
                         <img src="power.jpg" alt="Power Platform">
@@ -196,7 +196,7 @@
                     </div>
                     <a href="powerApps.html" class="card-btn">View Projects <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="platform-card reveal">
+                <div class="platform-card platform-card-servicenow reveal">
                     <div class="card-glow"></div>
                     <div class="card-icon">
                         <img src="serviceNow.jpg" alt="ServiceNow">
@@ -212,7 +212,7 @@
                     </div>
                     <a href="serviceNow.html" class="card-btn">View Projects <i class="fas fa-arrow-right"></i></a>
                 </div>
-                <div class="platform-card reveal">
+                <div class="platform-card platform-card-decisions reveal">
                     <div class="card-glow"></div>
                     <div class="card-icon">
                         <img src="decisions.jpeg" alt="Decisions">
@@ -242,73 +242,88 @@
             <p class="personal-intro reveal">Beyond client work, I build self-initiated projects to explore emerging tech and AI integrations — applying enterprise skills in personal, experimental contexts.</p>
             <div class="personal-grid">
 
-                <a href="personal.html#sn-claude" class="personal-card reveal">
-                    <span class="personal-card-badge">Featured</span>
-                    <div class="personal-card-icon ai-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="personal-card-body">
-                        <h3>ServiceNow × Claude AI</h3>
-                        <p>A web app integrating ServiceNow with Claude AI — users type plain English commands and Claude constructs the REST API call, fetches data, and formats the result. No portal navigation needed.</p>
-                        <div class="personal-tech">
-                            <span>Claude API</span>
-                            <span>ServiceNow</span>
-                            <span>Node.js</span>
-                            <span>Prompt Engineering</span>
+                <a href="personal.html#sn-claude" class="personal-tile personal-tile-featured reveal">
+                    <div class="tile-badge-row">
+                        <div class="personal-tile-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="5" r="2.2"/>
+                                <circle cx="5" cy="17" r="2.2"/>
+                                <circle cx="19" cy="17" r="2.2"/>
+                                <path d="M10.3 6.5 6.7 15.2M13.7 6.5l3.6 8.7M7.2 17h9.6"/>
+                            </svg>
                         </div>
+                        <span class="personal-tile-featured-pill">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.6L21 9l-5 4.5 1.5 7-5.5-3.6L6.5 20.5 8 13.5 3 9l6.4-.4z"/></svg>
+                            Featured
+                        </span>
                     </div>
-                    <div class="personal-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <h3>ServiceNow × Claude AI</h3>
+                    <p>A web app integrating ServiceNow with Claude AI — users type plain English commands and Claude constructs the REST API call, fetches data, and formats the result. No portal navigation needed.</p>
+                    <div class="personal-tech">
+                        <span>Claude API</span>
+                        <span>ServiceNow</span>
+                        <span>Node.js</span>
+                        <span>Prompt Engineering</span>
+                    </div>
+                    <div class="personal-tile-go"><i class="fas fa-arrow-right"></i></div>
                 </a>
 
-                <a href="personal.html#pfmt" class="personal-card reveal">
-                    <div class="personal-card-icon">
-                        <i class="fas fa-wallet"></i>
+                <a href="personal.html#planner" class="personal-tile personal-tile-planner reveal">
+                    <div class="personal-tile-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/>
+                            <path d="M3.5 9.5h17M8 3v3.6M16 3v3.6"/>
+                            <path d="M8.7 14.3l1.9 1.9 4-4"/>
+                        </svg>
                     </div>
-                    <div class="personal-card-body">
-                        <h3>Personal Finance Money Tracker</h3>
-                        <p>A full-stack finance web app using ServiceNow PDI as cloud backend via Scripted REST APIs. Tracks transactions, budgets, and savings goals — with Groq AI insights and GitHub Actions CI/CD.</p>
-                        <div class="personal-tech">
-                            <span>ServiceNow PDI</span>
-                            <span>Groq AI</span>
-                            <span>GitHub Actions</span>
-                            <span>GitHub Pages</span>
-                        </div>
+                    <h3>Personal Planning System</h3>
+                    <p>An offline-first PWA for hierarchical goal planning — Vision down to daily tasks — built on React and synced to ServiceNow as the backend of record.</p>
+                    <div class="personal-tech">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>PWA</span>
+                        <span>ServiceNow</span>
                     </div>
-                    <div class="personal-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="personal-tile-go"><i class="fas fa-arrow-right"></i></div>
                 </a>
 
-                <a href="personal.html#planner" class="personal-card reveal">
-                    <div class="personal-card-icon">
-                        <i class="fas fa-calendar-check"></i>
+                <a href="personal.html#mini-game" class="personal-tile personal-tile-rewards reveal">
+                    <div class="personal-tile-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2.5" y="8" width="19" height="10.5" rx="5"/>
+                            <circle cx="8" cy="13.2" r="0.6" fill="currentColor" stroke="none"/>
+                            <path d="M6 13.2h4M8 11.2v4"/>
+                            <circle cx="16.2" cy="12.1" r="1" fill="currentColor" stroke="none"/>
+                            <circle cx="18.2" cy="14.4" r="1" fill="currentColor" stroke="none"/>
+                        </svg>
                     </div>
-                    <div class="personal-card-body">
-                        <h3>Personal Planning System</h3>
-                        <p>An offline-first PWA for hierarchical goal planning — Vision down to daily tasks — built on React and synced to ServiceNow as the backend of record.</p>
-                        <div class="personal-tech">
-                            <span>React</span>
-                            <span>TypeScript</span>
-                            <span>PWA</span>
-                            <span>ServiceNow</span>
-                        </div>
+                    <h3>Shared Rewards Tracker</h3>
+                    <p>A gamified points-and-rewards app for two connected accounts, with a real-time shared virtual space and a custom ServiceNow-backed sync layer.</p>
+                    <div class="personal-tech">
+                        <span>Vanilla JS</span>
+                        <span>ServiceNow</span>
+                        <span>Real-Time Sync</span>
                     </div>
-                    <div class="personal-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="personal-tile-go"><i class="fas fa-arrow-right"></i></div>
                 </a>
 
-                <a href="personal.html#mini-game" class="personal-card reveal">
-                    <div class="personal-card-icon">
-                        <i class="fas fa-gamepad"></i>
+                <a href="personal.html#pfmt" class="personal-tile personal-tile-pfmt reveal">
+                    <div class="personal-tile-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3.5 7.5A2.5 2.5 0 0 1 6 5h11a2.5 2.5 0 0 1 2.5 2.5v9A2.5 2.5 0 0 1 17 19H6a2.5 2.5 0 0 1-2.5-2.5z"/>
+                            <path d="M3.5 9.5H19"/>
+                            <circle cx="16" cy="14" r="1.1" fill="currentColor" stroke="none"/>
+                        </svg>
                     </div>
-                    <div class="personal-card-body">
-                        <h3>Shared Rewards Tracker</h3>
-                        <p>A gamified points-and-rewards app for two connected accounts, with a real-time shared virtual space and a custom ServiceNow-backed sync layer.</p>
-                        <div class="personal-tech">
-                            <span>Vanilla JS</span>
-                            <span>ServiceNow</span>
-                            <span>Real-Time Sync</span>
-                            <span>GitHub Pages</span>
-                        </div>
+                    <h3>Personal Finance Money Tracker</h3>
+                    <p>A full-stack finance web app using ServiceNow PDI as cloud backend via Scripted REST APIs. Tracks transactions, budgets, and savings goals — with Groq AI insights and GitHub Actions CI/CD.</p>
+                    <div class="personal-tech">
+                        <span>ServiceNow PDI</span>
+                        <span>Groq AI</span>
+                        <span>GitHub Actions</span>
+                        <span>GitHub Pages</span>
                     </div>
-                    <div class="personal-card-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="personal-tile-go"><i class="fas fa-arrow-right"></i></div>
                 </a>
 
             </div>
