@@ -223,6 +223,6 @@ if (form) {
         const subject = document.getElementById('subject')?.value.trim() || 'Portfolio Inquiry';
         const message = document.getElementById('message')?.value.trim() || '';
         const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-        window.location.href = `mailto:yceng038@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = `mailto:ycseng0398@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     });
 }
