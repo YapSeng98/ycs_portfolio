@@ -1,6 +1,6 @@
 # YCS Portfolio
 
-Personal portfolio website for **Yap Chung Seng** — Application Developer building enterprise workflows on Decisions, ServiceNow and Power Platform, and full-stack apps with React, Supabase and AI.
+Personal portfolio website for **Yap Chung Seng** — Senior Application Developer building enterprise workflows on Decisions, ServiceNow and Power Platform, and full-stack apps with React, Supabase and AI.
 
 🔗 **Live site:** [yapseng98.github.io/ycs_portfolio](https://yapseng98.github.io/ycs_portfolio)
 
@@ -60,7 +60,6 @@ Portfolio/
 - **Light / dark theme** — toggle in the navbar, remembered per visitor, applied before paint (no flash)
 - **Filterable work grid** — All / Enterprise / AI / Personal builds; counts are computed from each tile's `data-cat`
 - **Case studies** — stats, flow diagrams and "what it does / how it's built" for each project, with a sticky project index that tracks your scroll position
-- **Live demo links** for projects with a public demo (Homeset, NEXAUTO, BizTrack)
 - **Particle canvas** — pauses when off-screen or in a background tab, and doesn't reset when mobile browsers resize on scroll
 - **Reduced motion** — particles, typing, counters and reveals all respect `prefers-reduced-motion`
 - **Accessibility** — skip link, real `<button>` controls with `aria-expanded`/`aria-pressed`, keyboard-reachable cards, Escape closes the menu

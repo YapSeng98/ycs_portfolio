@@ -135,7 +135,7 @@
     const typingEl = document.getElementById('typing-text');
     if (typingEl && !reduceMotion.matches) {
         const words = [
-            'Application Developer',
+            'Senior Application Developer',
             'BPM Specialist',
             'ServiceNow Developer',
             'Full-Stack Builder',

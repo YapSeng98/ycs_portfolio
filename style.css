@@ -729,9 +729,6 @@
 .tile-more i { font-size: 0.75em; }
 .tile:hover .tile-more { gap: 12px; }
 
-/* sits above the stretched link so it stays clickable */
-.btn-demo { position: relative; z-index: 2; }
-
 /* ===== Tile visuals ===== */
 .tile-visual {
     position: relative;
