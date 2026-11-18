@@ -1,6 +1,6 @@
 /* =========================================================
    style.css — index.html only
-   Hero, About, Work (client platforms), Projects (bento), Contact.
+   Hero, About, Work (client platforms), Projects (spotlight + grouped cards), Contact.
    Shared tokens/nav/buttons live in base.css.
    ========================================================= */
 
@@ -564,18 +564,7 @@
     border: 1px solid var(--accent-line);
 }
 
-/* ===== Work: bento grid ===== */
-.bento {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-auto-rows: minmax(250px, auto);
-    grid-auto-flow: dense;
-    gap: 20px;
-}
-
-.tile-xl { grid-column: span 2; grid-row: span 2; }
-.tile-wide { grid-column: span 2; }
-
+/* ===== Tiles (Work cards) ===== */
 .tile {
     --mx: 50%;
     --my: 50%;
@@ -680,7 +669,6 @@
 }
 
 .tile h3 { font-size: 1.22rem; font-weight: 600; }
-.tile-xl h3 { font-size: 1.75rem; }
 
 .tile-link { color: var(--text); }
 
@@ -706,7 +694,6 @@
     color: var(--text-2);
 }
 
-.tile-xl .tile-desc { font-size: 0.97rem; max-width: 60ch; }
 
 .tile > .chips { margin-top: auto; }
 
@@ -731,14 +718,323 @@
 .tile-more i { font-size: 0.75em; }
 .tile:hover .tile-more { gap: 12px; }
 
-/* ===== Tile visuals ===== */
-.tile-visual {
+/* ===== Projects: featured spotlight (Homeset) ===== */
+.spotlight {
+    --mx: 50%;
+    --my: 50%;
     position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    margin-bottom: 64px;
+    border-radius: 28px;
     overflow: hidden;
-    padding: 18px;
-    border-radius: var(--radius);
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
+    background:
+        radial-gradient(900px 520px at 100% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%),
+        var(--surface);
+    transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.spotlight:hover,
+.spotlight:focus-within {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+    box-shadow: 0 40px 90px -40px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.js .spotlight.reveal {
+    transition: opacity 0.7s var(--ease), translate 0.7s var(--ease),
+                transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+.spotlight-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 44px 40px;
+}
+
+.spotlight-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+.spotlight h3 {
+    font-size: clamp(2.1rem, 4.2vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+}
+
+.spotlight-desc {
+    max-width: 52ch;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-2);
+}
+
+.spotlight-stats {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.spotlight-stats > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end; /* numbers line up even when labels differ in length */
+    gap: 4px;
+    padding: 14px 16px 14px 0;
+}
+
+.spotlight-stats > div + div {
+    padding-left: 16px;
+    border-left: 1px solid var(--border);
+}
+
+.spotlight-stats dd {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.spotlight-stats dt {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: var(--text-3);
+}
+
+.spotlight-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+    padding: 11px 20px;
+    border-radius: 50px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #14100a;
+    background: var(--accent);
+    transition: gap 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.spotlight-cta i { font-size: 0.78em; }
+
+.spotlight:hover .spotlight-cta {
+    gap: 14px;
+    box-shadow: 0 10px 30px -10px var(--accent);
+}
+
+.spotlight-visual {
+    min-height: 400px;
+    padding: 36px;
+    border-left: 1px solid var(--border);
+    background-color: color-mix(in srgb, var(--accent) 4%, var(--bg));
+}
+
+.spotlight-visual svg { transition: transform 0.6s var(--ease); }
+.spotlight:hover .spotlight-visual svg { transform: translateY(-6px) scale(1.02); }
+
+/* ===== Projects: grouped cards ===== */
+.proj-group + .proj-group { margin-top: 56px; }
+
+.proj-group-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-2);
+}
+
+.proj-group-title i { color: var(--primary); font-size: 0.8rem; }
+
+.proj-group-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-strong), transparent);
+}
+
+.proj-group-count { color: var(--text-3); }
+
+.proj-grid { display: grid; gap: 20px; }
+.proj-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.proj-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.proj-card {
+    --mx: 50%;
+    --my: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--surface);
     border: 1px solid var(--border);
-    background: color-mix(in srgb, var(--accent) 5%, var(--bg));
+    transition: transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+/* cursor-follow glow */
+.proj-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(360px circle at var(--mx) var(--my), color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s var(--ease);
+    pointer-events: none;
+}
+
+.proj-card:hover,
+.proj-card:focus-within {
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+    box-shadow: 0 30px 60px -30px color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.proj-card:hover::after { opacity: 1; }
+
+.js .proj-card.reveal {
+    transition: opacity 0.7s var(--ease), translate 0.7s var(--ease),
+                transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
+}
+
+/* cover: accent gradient + a pattern per group */
+.proj-cover {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background:
+        radial-gradient(110% 140% at 100% 0%, color-mix(in srgb, var(--accent) 32%, transparent), transparent 58%),
+        radial-gradient(90% 120% at 0% 100%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 62%),
+        color-mix(in srgb, var(--accent) 5%, var(--surface-solid));
+}
+
+.proj-grid-3 .proj-cover { height: 144px; }
+
+.proj-cover::before {
+    --line: color-mix(in srgb, var(--accent) 24%, transparent);
+    content: '';
+    position: absolute;
+    inset: -20px;
+    -webkit-mask-image: radial-gradient(ellipse 75% 95% at 85% 15%, #000 15%, transparent 72%);
+    mask-image: radial-gradient(ellipse 75% 95% at 85% 15%, #000 15%, transparent 72%);
+    transition: transform 0.7s var(--ease);
+}
+
+.cover-grid::before {
+    background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.cover-dots::before {
+    background-image: radial-gradient(circle, var(--line) 1.3px, transparent 1.7px);
+    background-size: 16px 16px;
+}
+
+.cover-lines::before {
+    background-image: repeating-linear-gradient(135deg, var(--line) 0 1px, transparent 1px 14px);
+}
+
+.proj-card:hover .proj-cover::before { transform: translate(-10px, 6px); }
+
+.proj-cover-icon {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 60px; height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    font-size: 1.5rem;
+    color: var(--accent-ink);
+    background: color-mix(in srgb, var(--surface-solid) 60%, transparent);
+    border: 1px solid var(--accent-line);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 14px 30px -12px color-mix(in srgb, var(--accent) 55%, transparent);
+    transition: transform 0.45s var(--ease);
+}
+
+.proj-card:hover .proj-cover-icon { transform: translateY(-4px) rotate(-6deg); }
+
+.proj-metric {
+    position: absolute;
+    left: 22px; bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.proj-metric strong {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    color: var(--text);
+}
+
+.proj-grid-3 .proj-metric strong { font-size: 2.2rem; }
+
+.proj-metric span {
+    white-space: nowrap; /* one line, so numbers in a row sit at the same height */
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+}
+
+.proj-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 22px 24px 0;
+}
+
+.proj-body h4 { font-size: 1.3rem; font-weight: 600; }
+
+.proj-foot {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 24px 22px;
+}
+
+.proj-go {
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 0.85rem;
+    color: var(--accent-ink);
+    border: 1px solid var(--accent-line);
+    transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.35s var(--ease);
+}
+
+.proj-card:hover .proj-go {
+    color: #0b0b14;
+    background: var(--accent);
+    border-color: transparent;
+    transform: rotate(-45deg);
 }
 
 .homeset-visual {
@@ -914,9 +1210,15 @@
 }
 
 @media (max-width: 1024px) {
-    .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .work-grid { grid-template-columns: 1fr; }
-    .tile-xl { grid-row: auto; }
+
+    .spotlight { grid-template-columns: 1fr; }
+    .spotlight-visual {
+        order: -1;
+        min-height: 280px;
+        border-left: 0;
+        border-bottom: 1px solid var(--border);
+    }
 
     .about-grid,
     .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -935,6 +1237,9 @@
 
     .hero-copy { align-items: center; }
     .hero-visual { order: -1; max-width: 280px; }
+
+    .proj-grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .proj-grid-3 > :last-child:nth-child(odd) { grid-column: span 2; }
 
     /* smaller ring: keep the 4 enterprise/AI chips, one per side */
     .float-chip { font-size: 0.7rem; padding: 6px 11px; }
@@ -958,11 +1263,26 @@
     .stat-item { flex: 1; align-items: center; padding: 12px 10px; }
     .stat-num { font-size: 1.6rem; }
 
-    .bento { grid-template-columns: 1fr; gap: 16px; }
-    .tile-xl, .tile-wide { grid-column: auto; grid-row: auto; }
     .tile { padding: 22px 18px; }
-    .tile-xl h3 { font-size: 1.45rem; }
-    .homeset-visual { min-height: 0; padding: 12px; }
+
+    .spotlight { margin-bottom: 48px; border-radius: var(--radius-lg); }
+    .spotlight-body { padding: 26px 20px 28px; }
+    .spotlight-visual { min-height: 0; padding: 18px; }
+    .spotlight-stats dd { font-size: 1.35rem; }
+    .spotlight-stats dt { font-size: 0.72rem; }
+    .spotlight-stats > div { padding-right: 10px; }
+    .spotlight-stats > div + div { padding-left: 10px; }
+
+    .proj-group + .proj-group { margin-top: 44px; }
+    .proj-grid-2,
+    .proj-grid-3 { grid-template-columns: 1fr; gap: 16px; }
+    .proj-grid-3 > :last-child:nth-child(odd) { grid-column: auto; }
+    .proj-cover,
+    .proj-grid-3 .proj-cover { height: 132px; }
+    .proj-metric strong,
+    .proj-grid-3 .proj-metric strong { font-size: 2.1rem; }
+    .proj-body { padding: 20px 18px 0; }
+    .proj-foot { padding: 16px 18px 20px; }
 
     .timeline { padding-left: 26px; }
     .timeline-dot { left: -26px; }

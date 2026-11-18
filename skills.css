@@ -398,6 +398,7 @@
 .case-stats > div {
     display: flex;
     flex-direction: column-reverse;
+    justify-content: flex-end; /* numbers line up even when labels differ in length */
     gap: 4px;
     padding: 16px 18px;
     border-radius: 14px;

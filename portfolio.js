@@ -201,7 +201,7 @@
     }
 
     /* ===== Cursor spotlight on cards ===== */
-    document.querySelectorAll('.tile, .project-card, .case').forEach(card => {
+    document.querySelectorAll('.tile, .project-card, .case, .proj-card').forEach(card => {
         card.addEventListener('pointermove', e => {
             if (e.pointerType !== 'mouse') return;
             const r = card.getBoundingClientRect();

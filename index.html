@@ -343,16 +343,31 @@
                     <p class="section-lede">Self-initiated products, separate from client work — designed, built and shipped in my own time with Claude as my AI pair programmer.</p>
                 </header>
 
-                <div class="bento">
-
-                    <!-- Homeset (featured) -->
-                    <article class="tile tile-xl accent-homeset reveal">
-                        <div class="tile-top">
-                            <span class="tile-icon"><i class="fas fa-cube"></i></span>
+                <!-- Featured: Homeset -->
+                <article class="spotlight accent-homeset reveal">
+                    <div class="spotlight-body">
+                        <div class="spotlight-top">
                             <span class="tile-badge"><i class="fas fa-star"></i> Featured</span>
+                            <span class="tile-kicker">Personal product · PropTech</span>
                         </div>
-                        <div class="tile-visual homeset-visual" aria-hidden="true">
-                            <svg viewBox="0 0 340 180" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+                        <h3><a class="tile-link" href="personal.html#homeset">Homeset</a></h3>
+                        <p class="spotlight-desc">Upload a floor plan, trace it, and get a furnished 3D home that buyers can walk through — with path-traced 360° "Real View" rooms and a WhatsApp line to the agent. Built for property agents in Malaysia and Singapore.</p>
+                        <dl class="spotlight-stats">
+                            <div><dt>data model drives every view</dt><dd>1</dd></div>
+                            <div><dt>per 360° room on an M2</dt><dd>≈90 s</dd></div>
+                            <div><dt>languages</dt><dd>3</dd></div>
+                        </dl>
+                        <ul class="chips">
+                            <li>TypeScript</li>
+                            <li>React</li>
+                            <li>three.js</li>
+                            <li>Path tracing</li>
+                            <li>Fastify</li>
+                        </ul>
+                        <span class="spotlight-cta" aria-hidden="true">Read the case study <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                    <div class="spotlight-visual homeset-visual" aria-hidden="true">
+                        <svg viewBox="0 0 340 180" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
                                 <!-- 2D floor plan -->
                                 <text x="16" y="60" class="svg-label">PLAN</text>
                                 <rect x="16" y="70" width="80" height="50" stroke-width="2"/>
@@ -380,157 +395,158 @@
                                 <path d="M213.8 116 269.3 148 269.3 108 213.8 76Z" stroke-width="1.2" class="svg-fill-strong"/>
                                 <text x="268" y="32" class="svg-label">3D · 360°</text>
                             </svg>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">Personal product · PropTech</p>
-                            <h3><a class="tile-link" href="personal.html#homeset">Homeset</a></h3>
-                            <p class="tile-desc">Upload a floor plan, trace it, and get a furnished 3D home that buyers can walk through — with path-traced 360° "Real View" rooms and a WhatsApp line to the agent. Built for agents in Malaysia and Singapore.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>TypeScript</li>
-                            <li>React</li>
-                            <li>three.js</li>
-                            <li>Path tracing</li>
-                            <li>Fastify</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">Case study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
+                    </div>
+                </article>
 
-                    <article class="tile accent-ai reveal">
-                        <div class="tile-top">
-                            <span class="tile-icon"><i class="fas fa-robot"></i></span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">AI integration · ServiceNow</p>
-                            <h3><a class="tile-link" href="personal.html#sn-claude">ServiceNow × Claude AI</a></h3>
-                            <p class="tile-desc">Type a request in plain English; Claude builds the ServiceNow REST call, a Node.js proxy runs it, and Claude turns the raw JSON into a readable answer.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>Claude API</li>
-                            <li>Node.js</li>
-                            <li>Scripted REST</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">Case study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
+                <div class="proj-group">
+                    <h3 class="proj-group-title reveal"><i class="fas fa-briefcase"></i> Business products <span class="proj-group-count">02</span></h3>
+                    <div class="proj-grid proj-grid-2">
+                        <article class="proj-card accent-nexauto reveal">
+                            <div class="proj-cover cover-grid" aria-hidden="true">
+                                <span class="proj-cover-icon"><i class="fas fa-car-side"></i></span>
+                                <div class="proj-metric"><strong>617</strong><span>end-to-end checks</span></div>
+                            </div>
+                            <div class="proj-body">
+                                <p class="tile-kicker">Operations · Auto repair</p>
+                                <h4><a class="tile-link" href="personal.html#nexauto">NEXAUTO</a></h4>
+                                <p class="tile-desc">Workshop operations for auto repair shops — check-in to payment, parts inventory and four permission-controlled roles in one app.</p>
+                            </div>
+                            <div class="proj-foot">
+                                <ul class="chips">
+                                    <li>Vanilla JS</li>
+                                    <li>RBAC</li>
+                                    <li>jsdom tests</li>
+                                </ul>
+                                <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </article>
+                        <article class="proj-card accent-biztrack reveal">
+                            <div class="proj-cover cover-grid" aria-hidden="true">
+                                <span class="proj-cover-icon"><i class="fas fa-sitemap"></i></span>
+                                <div class="proj-metric"><strong>6</strong><span>custom ServiceNow tables</span></div>
+                            </div>
+                            <div class="proj-body">
+                                <p class="tile-kicker">CRM · ServiceNow backend</p>
+                                <h4><a class="tile-link" href="personal.html#biztrack">BizTrack</a></h4>
+                                <p class="tile-desc">Customers, a partner network and activities in a React app — backed by a custom ServiceNow scoped app with its own token auth.</p>
+                            </div>
+                            <div class="proj-foot">
+                                <ul class="chips">
+                                    <li>React</li>
+                                    <li>ServiceNow</li>
+                                    <li>React Flow</li>
+                                </ul>
+                                <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
 
-                    <article class="tile accent-nexauto reveal">
-                        <div class="tile-top">
-                            <span class="tile-icon"><i class="fas fa-car-side"></i></span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">Personal product · Operations</p>
-                            <h3><a class="tile-link" href="personal.html#nexauto">NEXAUTO</a></h3>
-                            <p class="tile-desc">Workshop operations for auto repair shops — check-in to payment, parts inventory and four permission-controlled roles. 617 automated end-to-end checks.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>Vanilla JS</li>
-                            <li>RBAC</li>
-                            <li>jsdom tests</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">Case study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
+                <div class="proj-group">
+                    <h3 class="proj-group-title reveal"><i class="fas fa-wand-magic-sparkles"></i> AI &amp; automation <span class="proj-group-count">02</span></h3>
+                    <div class="proj-grid proj-grid-2">
+                        <article class="proj-card accent-ai reveal">
+                            <div class="proj-cover cover-dots" aria-hidden="true">
+                                <span class="proj-cover-icon"><i class="fas fa-robot"></i></span>
+                                <div class="proj-metric"><strong>2</strong><span>Claude passes: parse, then format</span></div>
+                            </div>
+                            <div class="proj-body">
+                                <p class="tile-kicker">AI integration · ServiceNow</p>
+                                <h4><a class="tile-link" href="personal.html#sn-claude">ServiceNow × Claude AI</a></h4>
+                                <p class="tile-desc">Type a request in plain English; Claude builds the ServiceNow REST call, a Node.js proxy runs it, and Claude turns the JSON into a readable answer.</p>
+                            </div>
+                            <div class="proj-foot">
+                                <ul class="chips">
+                                    <li>Claude API</li>
+                                    <li>Node.js</li>
+                                    <li>Scripted REST</li>
+                                </ul>
+                                <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </article>
+                        <article class="proj-card accent-brief reveal">
+                            <div class="proj-cover cover-dots" aria-hidden="true">
+                                <span class="proj-cover-icon"><i class="fas fa-inbox"></i></span>
+                                <div class="proj-metric"><strong>5</strong><span>brief formats parsed</span></div>
+                            </div>
+                            <div class="proj-body">
+                                <p class="tile-kicker">AI tool · Productivity</p>
+                                <h4><a class="tile-link" href="personal.html#daily-brief">Daily Brief</a></h4>
+                                <p class="tile-desc">Paste an AI-written summary of your mailbox; it sorts what's on you, what you're waiting on and what's FYI — then sends tasks into the Planner.</p>
+                            </div>
+                            <div class="proj-foot">
+                                <ul class="chips">
+                                    <li>React 19</li>
+                                    <li>Supabase</li>
+                                    <li>LLM parsing</li>
+                                </ul>
+                                <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </article>
+                    </div>
+                </div>
 
-                    <article class="tile accent-biztrack reveal">
-                        <div class="tile-top">
-                            <span class="tile-icon"><i class="fas fa-sitemap"></i></span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">Personal product · CRM</p>
-                            <h3><a class="tile-link" href="personal.html#biztrack">BizTrack</a></h3>
-                            <p class="tile-desc">A business manager for customers, a partner network and activities — a React app on a custom ServiceNow scoped app with its own token auth.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>React</li>
-                            <li>ServiceNow</li>
-                            <li>React Flow</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">Case study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-
-                    <article class="tile accent-brief reveal">
-                        <div class="tile-top">
-                            <span class="tile-icon"><i class="fas fa-inbox"></i></span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">AI tool · Productivity</p>
-                            <h3><a class="tile-link" href="personal.html#daily-brief">Daily Brief</a></h3>
-                            <p class="tile-desc">Paste an AI-written summary of your mailbox; it sorts what's on you, what you're waiting on and what's FYI — then sends tasks straight into the Planner.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>React 19</li>
-                            <li>Supabase</li>
-                            <li>LLM parsing</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">Case study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-
-                    <article class="tile accent-planner reveal">
-                        <div class="tile-top">
-                            <span class="tile-icon"><i class="fas fa-calendar-check"></i></span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">Offline-first PWA</p>
-                            <h3><a class="tile-link" href="personal.html#planner">Personal Planning System</a></h3>
-                            <p class="tile-desc">Vision → Year → Quarter → Month → Week → Day, with goals that roll up automatically, AI daily briefings and full offline sync.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>React</li>
-                            <li>PWA</li>
-                            <li>Supabase</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">Case study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-
-                    <article class="tile accent-pfmt reveal">
-                        <div class="tile-top">
-                            <span class="tile-icon"><i class="fas fa-wallet"></i></span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">Personal finance</p>
-                            <h3><a class="tile-link" href="personal.html#pfmt">Personal Finance Money Tracker</a></h3>
-                            <p class="tile-desc">Multi-currency budgets, bills and savings goals in one HTML file — with nightly Telegram alerts from a Supabase Edge Function.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>Vanilla JS</li>
-                            <li>Supabase</li>
-                            <li>Telegram</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">Case study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-
-                    <article class="tile tile-wide accent-rewards reveal">
-                        <div class="tile-top">
-                            <span class="tile-icon"><i class="fas fa-gamepad"></i></span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">Gamified app</p>
-                            <h3><a class="tile-link" href="personal.html#mini-game">Shared Rewards Tracker</a></h3>
-                            <p class="tile-desc">Points and rewards for two accounts, with a pet that grows and a shared room that syncs live — every rule in 27 Supabase Edge Functions.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>Vanilla JS</li>
-                            <li>Edge Functions</li>
-                            <li>SVG</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">Case study <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-
+                <div class="proj-group">
+                    <h3 class="proj-group-title reveal"><i class="fas fa-mug-hot"></i> Everyday apps <span class="proj-group-count">03</span></h3>
+                    <div class="proj-grid proj-grid-3">
+                        <article class="proj-card accent-planner reveal">
+                            <div class="proj-cover cover-lines" aria-hidden="true">
+                                <span class="proj-cover-icon"><i class="fas fa-calendar-check"></i></span>
+                                <div class="proj-metric"><strong>6</strong><span>planning levels</span></div>
+                            </div>
+                            <div class="proj-body">
+                                <p class="tile-kicker">Offline-first PWA</p>
+                                <h4><a class="tile-link" href="personal.html#planner">Personal Planning System</a></h4>
+                                <p class="tile-desc">Vision → Year → Quarter → Month → Week → Day, with goals that roll up automatically and full offline sync.</p>
+                            </div>
+                            <div class="proj-foot">
+                                <ul class="chips">
+                                    <li>React</li>
+                                    <li>PWA</li>
+                                    <li>Supabase</li>
+                                </ul>
+                                <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </article>
+                        <article class="proj-card accent-pfmt reveal">
+                            <div class="proj-cover cover-lines" aria-hidden="true">
+                                <span class="proj-cover-icon"><i class="fas fa-wallet"></i></span>
+                                <div class="proj-metric"><strong>5</strong><span>currencies tracked</span></div>
+                            </div>
+                            <div class="proj-body">
+                                <p class="tile-kicker">Personal finance</p>
+                                <h4><a class="tile-link" href="personal.html#pfmt">Money Tracker</a></h4>
+                                <p class="tile-desc">Multi-currency budgets, bills and savings goals in a single HTML file — with nightly Telegram alerts.</p>
+                            </div>
+                            <div class="proj-foot">
+                                <ul class="chips">
+                                    <li>Vanilla JS</li>
+                                    <li>Supabase</li>
+                                    <li>Telegram</li>
+                                </ul>
+                                <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </article>
+                        <article class="proj-card accent-rewards reveal">
+                            <div class="proj-cover cover-lines" aria-hidden="true">
+                                <span class="proj-cover-icon"><i class="fas fa-gamepad"></i></span>
+                                <div class="proj-metric"><strong>27</strong><span>Edge Functions</span></div>
+                            </div>
+                            <div class="proj-body">
+                                <p class="tile-kicker">Gamified app</p>
+                                <h4><a class="tile-link" href="personal.html#mini-game">Shared Rewards Tracker</a></h4>
+                                <p class="tile-desc">Points and rewards for two, with a pet that grows and a shared room that syncs live between both phones.</p>
+                            </div>
+                            <div class="proj-foot">
+                                <ul class="chips">
+                                    <li>Vanilla JS</li>
+                                    <li>Edge Functions</li>
+                                    <li>SVG</li>
+                                </ul>
+                                <span class="proj-go" aria-hidden="true"><i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </article>
+                    </div>
                 </div>
 
                 <div class="work-cta reveal">
