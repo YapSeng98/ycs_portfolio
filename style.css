@@ -1,6 +1,6 @@
 /* =========================================================
    style.css — index.html only
-   Hero, About, Work (filterable bento), Contact.
+   Hero, About, Work (client platforms), Projects (bento), Contact.
    Shared tokens/nav/buttons live in base.css.
    ========================================================= */
 
@@ -279,8 +279,8 @@
 /* 8 chips spaced 45° apart on the outer orbit (radius 50%).
    Widest labels sit top/bottom, where there is the most room. */
 .fc-servicenow { left: 3%;    top: 32.9%; }
-.fc-decisions  { left: 28.9%; top: 4.7%;  animation-delay: -0.8s; }
-.fc-power      { left: 67.1%; top: 3%;    animation-delay: -1.6s; }
+.fc-decisions  { left: 25%;   top: 6.7%;  animation-delay: -0.8s; }
+.fc-power      { left: 71.1%; top: 4.7%;  animation-delay: -1.6s; }
 .fc-claude     { left: 95.3%; top: 28.9%; animation-delay: -2.4s; }
 .fc-supabase   { left: 97%;   top: 67.1%; animation-delay: -3.2s; }
 .fc-automate   { left: 71.1%; top: 95.3%; animation-delay: -4s; }
@@ -463,6 +463,8 @@
     color: var(--text-2);
 }
 
+.timeline-card li strong { color: var(--text); font-weight: 600; }
+
 .timeline-card li::before {
     content: '';
     position: absolute;
@@ -522,44 +524,45 @@
 .edu-school { font-size: 0.85rem; color: var(--text-2); }
 .edu-school i { margin-right: 6px; color: var(--secondary); }
 
-/* ===== Work: filters ===== */
-.filters {
+/* ===== Work: professional (platform) tiles ===== */
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.tile-projects {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 28px;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
 }
 
-.filter {
-    display: inline-flex;
+.tile-projects li {
+    display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 9px 18px;
-    border-radius: 50px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    color: var(--text-2);
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 0;
     font-size: 0.86rem;
-    font-weight: 600;
-    transition: color 0.25s var(--ease), border-color 0.25s var(--ease), background 0.25s var(--ease);
+    color: var(--text-2);
+    border-bottom: 1px solid var(--border);
 }
 
-.filter:hover { color: var(--text); border-color: var(--border-strong); }
+.tile-projects li.is-current { color: var(--text); font-weight: 600; }
+.tile-projects li.more { color: var(--text-3); font-size: 0.8rem; }
 
-.filter.is-active {
-    color: #fff;
-    background: var(--gradient);
-    border-color: transparent;
-}
-
-.filter-count {
+.tile-projects li span {
+    padding: 2px 9px;
+    border-radius: 50px;
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: 0.62rem;
     font-weight: 500;
-    opacity: 0.75;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
 }
-
-.filter-count:empty { display: none; }
 
 /* ===== Work: bento grid ===== */
 .bento {
@@ -571,8 +574,7 @@
 }
 
 .tile-xl { grid-column: span 2; grid-row: span 2; }
-.tile-tall { grid-row: span 2; }
-.tile[hidden] { display: none; }
+.tile-wide { grid-column: span 2; }
 
 .tile {
     --mx: 50%;
@@ -613,13 +615,6 @@
 .js .tile.reveal {
     transition: opacity 0.7s var(--ease), translate 0.7s var(--ease),
                 transform 0.35s var(--ease), border-color 0.35s var(--ease), box-shadow 0.35s var(--ease);
-}
-
-.tile.is-entering { animation: tile-in 0.45s var(--ease) both; }
-
-@keyframes tile-in {
-    from { opacity: 0; transform: translateY(12px) scale(0.98); }
-    to { opacity: 1; transform: none; }
 }
 
 .tile-top {
@@ -772,55 +767,6 @@
     opacity: 0.85;
 }
 
-.chat-mock {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    font-size: 0.78rem;
-}
-
-.chat-msg {
-    max-width: 94%;
-    padding: 10px 12px;
-    border-radius: 12px;
-    line-height: 1.5;
-}
-
-.chat-user {
-    align-self: flex-end;
-    color: #fff;
-    background: var(--gradient);
-    border-bottom-right-radius: 4px;
-}
-
-.chat-tool {
-    align-self: flex-start;
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    color: var(--text-3);
-    background: var(--surface);
-    border: 1px dashed var(--border-strong);
-    word-break: break-all;
-}
-
-.chat-tool span { color: var(--accent-ink); font-weight: 500; margin-right: 4px; }
-
-.chat-bot {
-    align-self: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    color: var(--text-2);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-bottom-left-radius: 4px;
-}
-
-.chat-bot strong { color: var(--text); font-weight: 600; margin-bottom: 2px; }
-.chat-bot b { font-family: var(--font-mono); font-weight: 500; color: var(--accent-ink); margin-right: 6px; }
-
 .work-cta {
     display: flex;
     justify-content: center;
@@ -969,6 +915,7 @@
 
 @media (max-width: 1024px) {
     .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .work-grid { grid-template-columns: 1fr; }
     .tile-xl { grid-row: auto; }
 
     .about-grid,
@@ -991,11 +938,12 @@
 
     /* smaller ring: keep the 4 enterprise/AI chips, one per side */
     .float-chip { font-size: 0.7rem; padding: 6px 11px; }
-    .fc-supabase, .fc-automate, .fc-sharepoint, .fc-react { display: none; }
-    .fc-servicenow { left: 4%;  top: 26%; }
-    .fc-decisions  { left: 96%; top: 26%; }
-    .fc-power      { left: 4%;  top: 74%; }
-    .fc-claude     { left: 96%; top: 74%; }
+    .fc-supabase, .fc-automate, .fc-react { display: none; }
+    .fc-decisions  { left: 50%; top: 2%; }
+    .fc-servicenow { left: 4%;  top: 30%; }
+    .fc-sharepoint { left: 96%; top: 30%; }
+    .fc-power      { left: 4%;  top: 72%; }
+    .fc-claude     { left: 96%; top: 72%; }
 }
 
 @media (max-width: 640px) {
@@ -1011,7 +959,7 @@
     .stat-num { font-size: 1.6rem; }
 
     .bento { grid-template-columns: 1fr; gap: 16px; }
-    .tile-xl, .tile-tall { grid-column: auto; grid-row: auto; }
+    .tile-xl, .tile-wide { grid-column: auto; grid-row: auto; }
     .tile { padding: 22px 18px; }
     .tile-xl h3 { font-size: 1.45rem; }
     .homeset-visual { min-height: 0; padding: 12px; }

@@ -18,11 +18,11 @@ A dark-first (with a light theme) portfolio built with vanilla HTML, CSS and Jav
 
 | File | Description |
 |---|---|
-| `index.html` | Main page — hero, about/timeline + tech stack, filterable work grid, contact |
+| `index.html` | Main page — hero, about/timeline + tech stack, professional work, personal projects, contact |
 | `personal.html` | Case studies for 8 personal builds (anchors: `#homeset`, `#sn-claude`, `#nexauto`, `#biztrack`, `#daily-brief`, `#planner`, `#pfmt`, `#mini-game`) |
 | `serviceNow.html` | ServiceNow client work — 6 projects |
 | `powerApps.html` | Microsoft Power Platform client work — 2 projects |
-| `decisions.html` | Decisions BPM client work — 2 projects |
+| `decisions.html` | Decisions BPM client work — 3 projects, incl. current project Cosmetica |
 
 ---
 
@@ -58,7 +58,7 @@ Portfolio/
 ## Features
 
 - **Light / dark theme** — toggle in the navbar, remembered per visitor, applied before paint (no flash)
-- **Filterable work grid** — All / Enterprise / AI / Personal builds; counts are computed from each tile's `data-cat`
+- **Work vs personal projects** — client work (Decisions, ServiceNow, Power Platform) and personal builds made with Claude live in separate sections
 - **Case studies** — stats, flow diagrams and "what it does / how it's built" for each project, with a sticky project index that tracks your scroll position
 - **Particle canvas** — pauses when off-screen or in a background tab, and doesn't reset when mobile browsers resize on scroll
 - **Reduced motion** — particles, typing, counters and reveals all respect `prefers-reduced-motion`
@@ -70,7 +70,7 @@ Portfolio/
 
 ## Adding a Project
 
-1. **Main page:** copy an `<article class="tile …">` in `index.html` → set its `accent-*` class, `data-cat` (any of `enterprise ai personal`), text and link.
+1. **Main page:** copy an `<article class="tile …">` in the Projects section of `index.html` → set its `accent-*` class, text and link. (Client projects go on their platform page, and in that platform's tile list under Work.)
 2. **Case study:** copy an `<article class="case …">` in `personal.html` → give it an `id`, then add a matching link to the `.case-index` nav.
 3. **New colour:** add `--c-<name>` to `:root` in `base.css`, an `.accent-<name>` rule, and add it to the accent-helper selector list just below.
 4. Update the **Projects** stat in the hero (`data-target`) and the counts in `personal.html`'s page header.

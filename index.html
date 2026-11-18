@@ -38,7 +38,7 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#work" class="nav-link">Work</a></li>
-                <li><a href="personal.html">Case Studies</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
@@ -88,7 +88,7 @@
                         </div>
                         <div class="stat-item">
                             <dt class="stat-label">Projects</dt>
-                            <dd class="stat-top"><span class="stat-num" data-target="18">18</span></dd>
+                            <dd class="stat-top"><span class="stat-num" data-target="19">19</span></dd>
                         </div>
                         <div class="stat-item">
                             <dt class="stat-label">Platforms</dt>
@@ -105,7 +105,7 @@
                     </div>
                     <!-- tech chips on the outer orbit (positions in style.css → .fc-*) -->
                     <span class="float-chip fc-servicenow accent-servicenow" aria-hidden="true"><i class="fas fa-server"></i> ServiceNow</span>
-                    <span class="float-chip fc-decisions accent-decisions" aria-hidden="true"><i class="fas fa-diagram-project"></i> Decisions</span>
+                    <span class="float-chip fc-decisions accent-decisions" aria-hidden="true"><i class="fas fa-diagram-project"></i> Decisions Platform</span>
                     <span class="float-chip fc-power accent-power" aria-hidden="true"><i class="fab fa-microsoft"></i> Power Platform</span>
                     <span class="float-chip fc-claude accent-homeset" aria-hidden="true"><i class="fas fa-brain"></i> Claude AI</span>
                     <span class="float-chip fc-supabase accent-pfmt" aria-hidden="true"><i class="fas fa-database"></i> Supabase</span>
@@ -154,6 +154,7 @@
                                 <span class="timeline-company"><i class="fas fa-building"></i> Activants Pte Ltd, Singapore</span>
                                 <p>Lead end-to-end BPM module development on the Decisions platform, delivering enterprise workflows with deep SAP integration across finance and operations.</p>
                                 <ul>
+                                    <li>Currently delivering <strong>Cosmetica</strong> on the Decisions platform</li>
                                     <li>Architect full BPM modules, from database schema to frontend workflow</li>
                                     <li>Design multi-level approval matrices with dynamic routing and escalation</li>
                                     <li>Integrate with SAP via REST APIs for GL posting and internal order retrieval</li>
@@ -239,30 +240,113 @@
             </div>
         </section>
 
-        <!-- ===== Work ===== -->
+        <!-- ===== Work (professional / client) ===== -->
         <section id="work" class="section section-alt">
-            <!-- old anchors kept so earlier shared links still land here -->
+            <!-- old anchor kept so earlier shared links still land here -->
             <span id="platforms" class="anchor-alias"></span>
+
+            <div class="section-inner">
+                <header class="section-head reveal">
+                    <span class="eyebrow">02 · Professional work</span>
+                    <h2>Client systems I've delivered</h2>
+                    <p class="section-lede">Enterprise workflows built on low-code BPM platforms for employers and their clients — from requirements and database design to UAT and go-live.</p>
+                </header>
+
+                <div class="work-grid">
+
+                    <article class="tile tile-platform accent-decisions reveal">
+                        <div class="tile-top">
+                            <span class="tile-icon tile-icon-img"><img src="decisions.jpeg" alt="" width="48" height="48" loading="lazy"></span>
+                            <span class="tile-badge"><span class="live-dot"></span> Current</span>
+                        </div>
+                        <div class="tile-body">
+                            <p class="tile-kicker">Activants · 2023 – Present</p>
+                            <h3><a class="tile-link" href="decisions.html">Decisions BPM</a></h3>
+                            <p class="tile-desc">End-to-end finance and business workflows with SAP integration — approval matrices, billing automation and bulk Excel upload.</p>
+                        </div>
+                        <ul class="tile-projects">
+                            <li class="is-current">Cosmetica <span>Current</span></li>
+                            <li>Bill Adjustment and Waiver</li>
+                            <li>Recurring Billing System</li>
+                        </ul>
+                        <ul class="chips">
+                            <li>BPM</li>
+                            <li>SAP</li>
+                            <li>Approval matrix</li>
+                        </ul>
+                        <div class="tile-actions">
+                            <span class="tile-more" aria-hidden="true">View 3 projects <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </article>
+
+                    <article class="tile tile-platform accent-servicenow reveal">
+                        <div class="tile-top">
+                            <span class="tile-icon tile-icon-img"><img src="serviceNow.jpg" alt="" width="48" height="48" loading="lazy"></span>
+                        </div>
+                        <div class="tile-body">
+                            <p class="tile-kicker">YTL Cement · 2021 – 2023</p>
+                            <h3><a class="tile-link" href="serviceNow.html">ServiceNow</a></h3>
+                            <p class="tile-desc">Property, safety, IT and inventory systems — portals, SLAs and Now Mobile apps with QR scanning on site.</p>
+                        </div>
+                        <ul class="tile-projects">
+                            <li>Land Information System</li>
+                            <li>Permit to Work</li>
+                            <li>E-Gatepass System</li>
+                            <li class="more">+ 3 more</li>
+                        </ul>
+                        <ul class="chips">
+                            <li>ITSM</li>
+                            <li>Flow Designer</li>
+                            <li>Now Mobile</li>
+                        </ul>
+                        <div class="tile-actions">
+                            <span class="tile-more" aria-hidden="true">View 6 projects <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </article>
+
+                    <article class="tile tile-platform accent-power reveal">
+                        <div class="tile-top">
+                            <span class="tile-icon tile-icon-img"><img src="power.jpg" alt="" width="48" height="48" loading="lazy"></span>
+                        </div>
+                        <div class="tile-body">
+                            <p class="tile-kicker">YTL Cement · 2021 – 2023</p>
+                            <h3><a class="tile-link" href="powerApps.html">Microsoft Power Platform</a></h3>
+                            <p class="tile-desc">Power Apps on SharePoint with Power Automate approval workflows and email notifications.</p>
+                        </div>
+                        <ul class="tile-projects">
+                            <li>SAP Service Helpdesk</li>
+                            <li>TP Document Management System</li>
+                        </ul>
+                        <ul class="chips">
+                            <li>Power Apps</li>
+                            <li>Power Automate</li>
+                            <li>SharePoint</li>
+                        </ul>
+                        <div class="tile-actions">
+                            <span class="tile-more" aria-hidden="true">View 2 projects <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Personal projects ===== -->
+        <section id="projects" class="section">
+            <!-- old anchor kept so earlier shared links still land here -->
             <span id="personal" class="anchor-alias"></span>
 
             <div class="section-inner">
                 <header class="section-head reveal">
-                    <span class="eyebrow">02 · Selected work</span>
-                    <h2>Things I've built</h2>
-                    <p class="section-lede">Client systems on enterprise platforms, and products I design, build and ship myself. Filter to what you care about.</p>
+                    <span class="eyebrow">03 · Personal projects</span>
+                    <h2>Things I build on my own</h2>
+                    <p class="section-lede">Self-initiated products, separate from client work — designed, built and shipped in my own time with Claude as my AI pair programmer.</p>
                 </header>
 
-                <div class="filters reveal" role="group" aria-label="Filter projects">
-                    <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All <span class="filter-count"></span></button>
-                    <button type="button" class="filter" data-filter="enterprise" aria-pressed="false">Enterprise <span class="filter-count"></span></button>
-                    <button type="button" class="filter" data-filter="ai" aria-pressed="false">AI <span class="filter-count"></span></button>
-                    <button type="button" class="filter" data-filter="personal" aria-pressed="false">Personal builds <span class="filter-count"></span></button>
-                </div>
-
-                <div class="bento" id="work-grid">
+                <div class="bento">
 
                     <!-- Homeset (featured) -->
-                    <article class="tile tile-xl accent-homeset reveal" data-cat="personal">
+                    <article class="tile tile-xl accent-homeset reveal">
                         <div class="tile-top">
                             <span class="tile-icon"><i class="fas fa-cube"></i></span>
                             <span class="tile-badge"><i class="fas fa-star"></i> Featured</span>
@@ -314,20 +398,9 @@
                         </div>
                     </article>
 
-                    <!-- ServiceNow x Claude -->
-                    <article class="tile tile-tall accent-ai reveal" data-cat="personal ai enterprise">
+                    <article class="tile accent-ai reveal">
                         <div class="tile-top">
                             <span class="tile-icon"><i class="fas fa-robot"></i></span>
-                        </div>
-                        <div class="tile-visual chat-mock" aria-hidden="true">
-                            <div class="chat-msg chat-user">Show open P1 incidents for my team</div>
-                            <div class="chat-msg chat-tool"><span>GET</span> incident?priority=1^active=true</div>
-                            <div class="chat-msg chat-bot">
-                                <strong>3 open P1 incidents</strong>
-                                <span><b>INC0010042</b> Email server down</span>
-                                <span><b>INC0010057</b> VPN gateway timeout</span>
-                                <span><b>INC0010061</b> Payroll job failed</span>
-                            </div>
                         </div>
                         <div class="tile-body">
                             <p class="tile-kicker">AI integration · ServiceNow</p>
@@ -344,69 +417,7 @@
                         </div>
                     </article>
 
-                    <!-- Enterprise platforms -->
-                    <article class="tile tile-platform accent-decisions reveal" data-cat="enterprise">
-                        <div class="tile-top">
-                            <span class="tile-icon tile-icon-img"><img src="decisions.jpeg" alt="" width="48" height="48" loading="lazy"></span>
-                            <span class="tile-count">2 projects</span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">Client work · Activants</p>
-                            <h3><a class="tile-link" href="decisions.html">Decisions BPM</a></h3>
-                            <p class="tile-desc">End-to-end finance workflows with SAP integration — approval matrices, recurring billing and bulk Excel upload.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>BPM</li>
-                            <li>SAP</li>
-                            <li>Approval matrix</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">View projects <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-
-                    <article class="tile tile-platform accent-servicenow reveal" data-cat="enterprise">
-                        <div class="tile-top">
-                            <span class="tile-icon tile-icon-img"><img src="serviceNow.jpg" alt="" width="48" height="48" loading="lazy"></span>
-                            <span class="tile-count">6 projects</span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">Client work · YTL Cement</p>
-                            <h3><a class="tile-link" href="serviceNow.html">ServiceNow</a></h3>
-                            <p class="tile-desc">Property, safety, IT and inventory systems — portals, SLAs and Now Mobile apps with QR scanning on site.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>ITSM</li>
-                            <li>Flow Designer</li>
-                            <li>Now Mobile</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">View projects <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-
-                    <article class="tile tile-platform accent-power reveal" data-cat="enterprise">
-                        <div class="tile-top">
-                            <span class="tile-icon tile-icon-img"><img src="power.jpg" alt="" width="48" height="48" loading="lazy"></span>
-                            <span class="tile-count">2 projects</span>
-                        </div>
-                        <div class="tile-body">
-                            <p class="tile-kicker">Client work · YTL Cement</p>
-                            <h3><a class="tile-link" href="powerApps.html">Microsoft Power Platform</a></h3>
-                            <p class="tile-desc">Power Apps on SharePoint with Power Automate approvals — an SAP helpdesk and a document management system.</p>
-                        </div>
-                        <ul class="chips">
-                            <li>Power Apps</li>
-                            <li>Power Automate</li>
-                            <li>SharePoint</li>
-                        </ul>
-                        <div class="tile-actions">
-                            <span class="tile-more" aria-hidden="true">View projects <i class="fas fa-arrow-right"></i></span>
-                        </div>
-                    </article>
-
-                    <!-- Personal products -->
-                    <article class="tile accent-nexauto reveal" data-cat="personal">
+                    <article class="tile accent-nexauto reveal">
                         <div class="tile-top">
                             <span class="tile-icon"><i class="fas fa-car-side"></i></span>
                         </div>
@@ -425,7 +436,7 @@
                         </div>
                     </article>
 
-                    <article class="tile accent-biztrack reveal" data-cat="personal enterprise">
+                    <article class="tile accent-biztrack reveal">
                         <div class="tile-top">
                             <span class="tile-icon"><i class="fas fa-sitemap"></i></span>
                         </div>
@@ -444,7 +455,7 @@
                         </div>
                     </article>
 
-                    <article class="tile accent-brief reveal" data-cat="personal ai">
+                    <article class="tile accent-brief reveal">
                         <div class="tile-top">
                             <span class="tile-icon"><i class="fas fa-inbox"></i></span>
                         </div>
@@ -463,7 +474,7 @@
                         </div>
                     </article>
 
-                    <article class="tile accent-planner reveal" data-cat="personal ai">
+                    <article class="tile accent-planner reveal">
                         <div class="tile-top">
                             <span class="tile-icon"><i class="fas fa-calendar-check"></i></span>
                         </div>
@@ -482,7 +493,7 @@
                         </div>
                     </article>
 
-                    <article class="tile accent-pfmt reveal" data-cat="personal ai">
+                    <article class="tile accent-pfmt reveal">
                         <div class="tile-top">
                             <span class="tile-icon"><i class="fas fa-wallet"></i></span>
                         </div>
@@ -501,7 +512,7 @@
                         </div>
                     </article>
 
-                    <article class="tile accent-rewards reveal" data-cat="personal">
+                    <article class="tile tile-wide accent-rewards reveal">
                         <div class="tile-top">
                             <span class="tile-icon"><i class="fas fa-gamepad"></i></span>
                         </div>
@@ -532,7 +543,7 @@
         <section id="contact" class="section">
             <div class="section-inner">
                 <header class="section-head reveal">
-                    <span class="eyebrow">03 · Let's connect</span>
+                    <span class="eyebrow">04 · Let's connect</span>
                     <h2>Get in touch</h2>
                 </header>
 

@@ -210,40 +210,6 @@
         });
     });
 
-    /* ===== Work filters (index.html) ===== */
-    const grid = document.getElementById('work-grid');
-    const filterBtns = document.querySelectorAll('.filter[data-filter]');
-    if (grid && filterBtns.length) {
-        const tiles = Array.from(grid.querySelectorAll('.tile'));
-        const matches = (tile, f) => f === 'all' || (tile.dataset.cat || '').split(/\s+/).includes(f);
-
-        filterBtns.forEach(btn => {
-            const slot = btn.querySelector('.filter-count');
-            if (slot) slot.textContent = tiles.filter(t => matches(t, btn.dataset.filter)).length;
-
-            btn.addEventListener('click', () => {
-                const f = btn.dataset.filter;
-                filterBtns.forEach(b => {
-                    const on = b === btn;
-                    b.classList.toggle('is-active', on);
-                    b.setAttribute('aria-pressed', String(on));
-                });
-                tiles.forEach(t => {
-                    const show = matches(t, f);
-                    const wasHidden = t.hidden;
-                    t.hidden = !show;
-                    if (!show) return;
-                    t.classList.add('visible');
-                    if (wasHidden && !reduceMotion.matches) {
-                        t.classList.remove('is-entering');
-                        void t.offsetWidth; // restart the animation
-                        t.classList.add('is-entering');
-                    }
-                });
-            });
-        });
-    }
-
     /* ===== Navbar state, active links, scroll-to-top ===== */
     const navbar = document.getElementById('navbar');
     const toTop = document.getElementById('scrollToTopButton');

@@ -417,6 +417,30 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
     -webkit-text-fill-color: transparent;
 }
 
+/* pulsing dot for "Current" badges; takes the text colour */
+.live-dot {
+    position: relative;
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.live-dot::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1.5px solid currentColor;
+    opacity: 0;
+    animation: live-ping 2.4s var(--ease) infinite;
+}
+
+@keyframes live-ping {
+    0% { transform: scale(0.6); opacity: 0.8; }
+    100% { transform: scale(1.7); opacity: 0; }
+}
+
 /* ===== Footer ===== */
 .site-footer {
     border-top: 1px solid var(--border);
