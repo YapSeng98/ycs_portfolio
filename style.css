@@ -272,13 +272,20 @@
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: var(--shadow);
+    translate: -50% -50%;   /* left/top below are the chip's centre */
     animation: bob 6s ease-in-out infinite;
 }
 
-.chip-a { top: 7%; left: -3%; }
-.chip-b { top: 20%; right: -6%; animation-delay: -1.5s; }
-.chip-c { bottom: 18%; left: -8%; animation-delay: -3s; }
-.chip-d { bottom: 5%; right: 2%; animation-delay: -4.5s; }
+/* 8 chips spaced 45° apart on the outer orbit (radius 50%).
+   Widest labels sit top/bottom, where there is the most room. */
+.fc-servicenow { left: 3%;    top: 32.9%; }
+.fc-decisions  { left: 28.9%; top: 4.7%;  animation-delay: -0.8s; }
+.fc-power      { left: 67.1%; top: 3%;    animation-delay: -1.6s; }
+.fc-claude     { left: 95.3%; top: 28.9%; animation-delay: -2.4s; }
+.fc-supabase   { left: 97%;   top: 67.1%; animation-delay: -3.2s; }
+.fc-automate   { left: 71.1%; top: 95.3%; animation-delay: -4s; }
+.fc-sharepoint { left: 32.9%; top: 97%;   animation-delay: -4.8s; }
+.fc-react      { left: 4.7%;  top: 71.1%; animation-delay: -5.6s; }
 
 @keyframes bob {
     0%, 100% { transform: translateY(0); }
@@ -953,6 +960,13 @@
 }
 
 /* ===== Responsive ===== */
+@media (max-width: 1100px) {
+    .float-chip { font-size: 0.72rem; padding: 7px 12px; }
+    /* narrower column: pull the right-hand chips in so they aren't clipped */
+    .fc-claude   { left: 90%; }
+    .fc-supabase { left: 91%; }
+}
+
 @media (max-width: 1024px) {
     .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .tile-xl { grid-row: auto; }
@@ -974,9 +988,14 @@
 
     .hero-copy { align-items: center; }
     .hero-visual { order: -1; max-width: 280px; }
-    .chip-a { left: -14%; }
-    .chip-b { right: -16%; }
-    .chip-c, .chip-d { display: none; }
+
+    /* smaller ring: keep the 4 enterprise/AI chips, one per side */
+    .float-chip { font-size: 0.7rem; padding: 6px 11px; }
+    .fc-supabase, .fc-automate, .fc-sharepoint, .fc-react { display: none; }
+    .fc-servicenow { left: 4%;  top: 26%; }
+    .fc-decisions  { left: 96%; top: 26%; }
+    .fc-power      { left: 4%;  top: 74%; }
+    .fc-claude     { left: 96%; top: 74%; }
 }
 
 @media (max-width: 640px) {
@@ -985,7 +1004,6 @@
 
     .hero-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
     .hero-visual { max-width: 220px; }
-    .float-chip { font-size: 0.7rem; padding: 6px 11px; }
     .hero-actions { width: 100%; flex-direction: column; }
     .hero-actions .btn { width: 100%; }
     .hero-stats { width: 100%; }
