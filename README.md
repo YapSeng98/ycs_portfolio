@@ -1,6 +1,6 @@
 # YCS Portfolio
 
-Personal portfolio website for **Yap Chung Seng** — Application Developer specialising in BPM, low-code platforms, and AI-driven workflow automation.
+Personal portfolio website for **Yap Chung Seng** — Application Developer building enterprise workflows on Decisions, ServiceNow and Power Platform, and full-stack apps with React, Supabase and AI.
 
 🔗 **Live site:** [yapseng98.github.io/ycs_portfolio](https://yapseng98.github.io/ycs_portfolio)
 
@@ -8,7 +8,9 @@ Personal portfolio website for **Yap Chung Seng** — Application Developer spec
 
 ## Overview
 
-A modern, dark-themed portfolio built with vanilla HTML, CSS, and JavaScript. Features a neural network particle animation, typing effect, scroll-reveal animations, and a fully responsive mobile layout.
+A dark-first (with a light theme) portfolio built with vanilla HTML, CSS and JavaScript. Features a neural-network particle hero, a filterable bento grid of projects, case-study pages with architecture diagrams, and a fully responsive mobile layout.
+
+**No frameworks. No build tools. No dependencies.**
 
 ---
 
@@ -16,40 +18,11 @@ A modern, dark-themed portfolio built with vanilla HTML, CSS, and JavaScript. Fe
 
 | File | Description |
 |---|---|
-| `index.html` | Main page — hero, about/timeline, platforms, personal projects, contact |
-| `serviceNow.html` | ServiceNow platform — 6 project cards |
-| `powerApps.html` | Microsoft Power Platform — 2 project cards |
-| `decisions.html` | Decisions BPM platform — 2 project cards |
-| `personal.html` | Personal projects — ServiceNow × Claude AI integration, PFMT, Personal Planning System, Shared Rewards Tracker |
-
----
-
-## Tech Stack
-
-| Layer | Detail |
-|---|---|
-| Markup | HTML5 |
-| Styling | CSS3 — custom properties, glassmorphism, CSS Grid / Flexbox |
-| Scripting | Vanilla JavaScript (ES6+) |
-| Icons | Font Awesome 6.5 |
-| Fonts | Google Fonts — Inter |
-| Hosting | GitHub Pages |
-
-**No frameworks. No build tools. No dependencies.**
-
----
-
-## Features
-
-- **Neural network particle canvas** — animated AI-aesthetic background on the hero section
-- **Typing animation** — cycles through job titles with typewriter effect
-- **Scroll-reveal** — `IntersectionObserver`-based staggered fade-in for all sections
-- **Animated stat counters** — hero stats count up on scroll into view
-- **Sticky navbar** — glassmorphism blur, scrolled-state darkening, active link tracking
-- **Mobile nav drawer** — slide-in menu with tap-outside-to-close overlay and Escape key support
-- **Contact form** — submits via `mailto:` with pre-filled subject and body
-- **Scroll to top** — fixed button that appears after scrolling 380px
-- **Architecture diagram** — CSS-only flowchart on the personal projects page
+| `index.html` | Main page — hero, about/timeline + tech stack, filterable work grid, contact |
+| `personal.html` | Case studies for 8 personal builds (anchors: `#homeset`, `#sn-claude`, `#nexauto`, `#biztrack`, `#daily-brief`, `#planner`, `#pfmt`, `#mini-game`) |
+| `serviceNow.html` | ServiceNow client work — 6 projects |
+| `powerApps.html` | Microsoft Power Platform client work — 2 projects |
+| `decisions.html` | Decisions BPM client work — 2 projects |
 
 ---
 
@@ -57,66 +30,62 @@ A modern, dark-themed portfolio built with vanilla HTML, CSS, and JavaScript. Fe
 
 ```
 Portfolio/
-├── index.html          # Main portfolio page
+├── index.html          # Main page
+├── personal.html       # Case studies (personal builds)
 ├── serviceNow.html     # ServiceNow projects
 ├── powerApps.html      # Power Platform projects
 ├── decisions.html      # Decisions BPM projects
-├── personal.html       # Personal & self-exploration projects
-├── style.css           # Main page styles
-├── skills.css          # Sub-page styles + architecture diagram styles
-├── portfolio.js        # All interactive behaviour
-├── profile.jpg         # Profile photo
-├── power.jpg           # Power Platform card image
-├── serviceNow.jpg      # ServiceNow card image
-├── decisions.jpeg      # Decisions card image
+├── base.css            # Shared: theme tokens (dark + light), navbar, buttons, chips, footer, motion
+├── style.css           # index.html only: hero, about, work grid, contact
+├── skills.css          # Sub-pages: platform project cards, case studies, flow diagrams
+├── portfolio.js        # All interactive behaviour (shared by every page)
+├── favicon.svg
+├── profile.jpg         # Profile photo (also the link-preview image)
+├── power.jpg / serviceNow.jpg / decisions.jpeg   # Platform logos
 └── README.md
 ```
 
 ---
 
+## Design System
+
+- **Tokens** live at the top of `base.css` — `:root` is dark (default), `:root[data-theme="light"]` overrides for light.
+- **Accent colours:** every project/platform has one (`--c-homeset`, `--c-servicenow`, …). Put `class="accent-<name>"` on an element and its children get `--accent`, `--accent-ink` (readable text, auto-darkened in light mode), `--accent-soft` (fill) and `--accent-line` (border).
+- **Fonts:** Space Grotesk (headings), Inter (body), JetBrains Mono (labels) via Google Fonts. Icons: Font Awesome 6.5.
+
+---
+
+## Features
+
+- **Light / dark theme** — toggle in the navbar, remembered per visitor, applied before paint (no flash)
+- **Filterable work grid** — All / Enterprise / AI / Personal builds; counts are computed from each tile's `data-cat`
+- **Case studies** — stats, flow diagrams and "what it does / how it's built" for each project, with a sticky project index that tracks your scroll position
+- **Live demo links** for projects with a public demo (Homeset, NEXAUTO, BizTrack)
+- **Particle canvas** — pauses when off-screen or in a background tab, and doesn't reset when mobile browsers resize on scroll
+- **Reduced motion** — particles, typing, counters and reveals all respect `prefers-reduced-motion`
+- **Accessibility** — skip link, real `<button>` controls with `aria-expanded`/`aria-pressed`, keyboard-reachable cards, Escape closes the menu
+- **SEO / sharing** — meta description, canonical URL and Open Graph tags on every page
+- **Contact form** — opens the visitor's email app via `mailto:` with subject and body filled in
+
+---
+
+## Adding a Project
+
+1. **Main page:** copy an `<article class="tile …">` in `index.html` → set its `accent-*` class, `data-cat` (any of `enterprise ai personal`), text and link.
+2. **Case study:** copy an `<article class="case …">` in `personal.html` → give it an `id`, then add a matching link to the `.case-index` nav.
+3. **New colour:** add `--c-<name>` to `:root` in `base.css`, an `.accent-<name>` rule, and add it to the accent-helper selector list just below.
+4. Update the **Projects** stat in the hero (`data-target`) and the counts in `personal.html`'s page header.
+
+---
+
 ## Running Locally
 
-No build step required — open directly in a browser:
-
-```bash
-git clone https://github.com/YapSeng98/ycs_portfolio.git
-cd ycs_portfolio
-open index.html        # macOS
-# or: start index.html  (Windows)
-# or: xdg-open index.html  (Linux)
-```
-
-Or serve with any static file server:
+No build step — open `index.html` in a browser, or serve the folder:
 
 ```bash
 npx serve .
 # then visit http://localhost:3000
 ```
-
----
-
-## Sections
-
-### Home
-Hero section with particle canvas, profile photo, typing animation, and animated stat counters (Years Exp. · Projects · Platforms).
-
-### About
-Two-column layout: career timeline (YTL Cement Shared Services → Activants Pte Ltd) and a tech stack card covering Languages, AI Tools & Agents, Competencies, and Education.
-
-### Platforms
-Three platform cards linking to dedicated project pages:
-- **Microsoft Power Platform** — Power Apps, Power Automate, SharePoint
-- **ServiceNow** — ITSM, Now Mobile, Flow Designer
-- **Decisions BPM** — SAP Integration, approval matrices, invoice automation
-
-### Personal Projects
-- **ServiceNow × Claude AI** — Natural language interface to ServiceNow using Anthropic API + Node.js proxy, with a CSS architecture diagram showing the full integration flow
-- **Personal Finance Money Tracker (PFMT)** — Full-stack web app using ServiceNow PDI as cloud backend via Scripted REST APIs, with Groq AI integration and GitHub Actions CI/CD
-- **Personal Planning System** — Offline-first PWA for hierarchical goal planning (Vision → Year → Quarter → Month → Week → Day) built on React + TypeScript, synced to ServiceNow
-- **Shared Rewards Tracker** — Gamified points-and-rewards app for two connected accounts with a real-time shared virtual space, built on vanilla JS and a ServiceNow REST API backend
-
-### Contact
-Split layout with contact details (email, phone MY/SG, LinkedIn, location) and a mailto-backed contact form.
 
 ---
 

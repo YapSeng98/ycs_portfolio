@@ -4,277 +4,660 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Projects — YCS</title>
+    <title>Case Studies — Yap Chung Seng</title>
+    <meta name="description" content="Case studies of apps built by Yap Chung Seng: Homeset 3D home tours, ServiceNow × Claude AI, NEXAUTO workshop ops, BizTrack, Daily Brief, a planning PWA, a finance tracker and a rewards app.">
+    <link rel="canonical" href="https://yapseng98.github.io/ycs_portfolio/personal.html">
+    <meta name="theme-color" content="#05050f">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Case Studies — Yap Chung Seng">
+    <meta property="og:description" content="Eight products, from a path-traced 3D property platform to AI tools on ServiceNow and Supabase.">
+    <meta property="og:url" content="https://yapseng98.github.io/ycs_portfolio/personal.html">
+    <meta property="og:image" content="https://yapseng98.github.io/ycs_portfolio/profile.jpg">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('ycs-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="skills.css">
 </head>
 
 <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo" aria-label="YCS — home">YCS<span class="logo-dot">.</span></a>
+        <nav aria-label="Main">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="personal.html" aria-current="page">Case Studies</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+                <i class="fas fa-sun" aria-hidden="true"></i><i class="fas fa-moon" aria-hidden="true"></i>
+            </button>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
     <div class="nav-overlay" id="nav-overlay"></div>
 
-    <nav class="navbar" id="navbar">
-        <div class="logo">YCS<span class="logo-dot">.</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#platforms">Platforms</a></li>
-            <li><a href="index.html#personal">Projects</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <main class="page-main" id="main">
 
-    <main class="page-main">
-
-        <div class="page-header">
-            <a href="index.html#personal" class="back-link">
-                <i class="fas fa-arrow-left"></i> Back to Projects
-            </a>
-            <span class="page-tag">Self Exploration</span>
-            <h1>Personal Projects</h1>
-            <p class="page-desc">Self-initiated projects built outside of client work to explore emerging technologies, experiment with AI integrations, and deepen full-stack development skills.</p>
-        </div>
-
-        <!-- ===== Featured: ServiceNow × Claude AI ===== -->
-        <div class="featured-project" id="sn-claude">
-
-            <div class="featured-header">
-                <div class="featured-badge">
-                    <i class="fas fa-robot"></i> AI Integration · Self Exploration
-                </div>
-                <h3>ServiceNow × Claude AI — Natural Language Interface</h3>
-                <p class="featured-desc">
-                    A self-built web application that bridges ServiceNow with Claude AI (Anthropic API), letting users interact with ServiceNow records using plain English commands instead of navigating the portal.
-                    This project explores the potential of large language models as an intelligent interface layer over enterprise REST APIs — combining my ServiceNow expertise with hands-on AI agent development.
-                </p>
+        <header class="page-header">
+            <a href="index.html#work" class="back-link"><i class="fas fa-arrow-left"></i> Back to work</a>
+            <span class="eyebrow">Personal builds</span>
+            <h1>Case <span class="gradient-text">studies</span></h1>
+            <p class="page-desc">Products I've designed, built and shipped outside client work — from a path-traced 3D property platform to AI tools that plug into enterprise systems. Each one covers what it does, how it's built and the numbers behind it.</p>
+            <div class="page-meta">
+                <span><i class="fas fa-layer-group"></i> 8 projects</span>
+                <span><i class="fas fa-database"></i> 4 on Supabase</span>
+                <span><i class="fas fa-server"></i> 2 on ServiceNow</span>
+                <span><i class="fas fa-play"></i> 3 public demos</span>
             </div>
+        </header>
 
-            <!-- Architecture Diagram -->
-            <div class="arch-diagram">
-                <p class="arch-title"><i class="fas fa-sitemap"></i>&nbsp;&nbsp;System Architecture</p>
-
-                <div class="arch-nodes">
-                    <div class="arch-node node-web">
-                        <i class="fas fa-display"></i>
-                        <span class="node-name">Web App</span>
-                        <span class="node-tech">HTML / CSS / JS</span>
-                    </div>
-                    <div class="arch-connector">
-                        <span class="conn-arrow">⟶</span>
-                        <span class="conn-label">user query</span>
-                    </div>
-                    <div class="arch-node node-proxy">
-                        <i class="fas fa-shield-halved"></i>
-                        <span class="node-name">Proxy Layer</span>
-                        <span class="node-tech">Node.js / Express</span>
-                    </div>
-                    <div class="arch-connector">
-                        <span class="conn-arrow">⟶</span>
-                        <span class="conn-label">prompt + context</span>
-                    </div>
-                    <div class="arch-node node-ai">
-                        <i class="fas fa-brain"></i>
-                        <span class="node-name">Claude AI</span>
-                        <span class="node-tech">Anthropic API</span>
-                    </div>
-                    <div class="arch-connector">
-                        <span class="conn-arrow">⟶</span>
-                        <span class="conn-label">API params</span>
-                    </div>
-                    <div class="arch-node node-sn">
-                        <i class="fas fa-server"></i>
-                        <span class="node-name">ServiceNow</span>
-                        <span class="node-tech">Scripted REST API</span>
-                    </div>
-                </div>
-
-                <div class="arch-return-row">
-                    <span class="arch-return-label">
-                        <i class="fas fa-rotate-left"></i> Response path: ServiceNow raw data → Claude AI formats → Web App displays
-                    </span>
-                </div>
-
-                <div class="arch-steps">
-                    <div class="arch-step">
-                        <span class="step-num">1</span>
-                        <p><strong>User Query</strong> — User types a plain English command in the web interface, e.g. <em>"Show all open P1 incidents assigned to my team this week"</em> or <em>"Create a high priority incident for the email server being down."</em></p>
-                    </div>
-                    <div class="arch-step">
-                        <span class="step-num">2</span>
-                        <p><strong>Secure Proxy</strong> — The Node.js proxy layer receives the request and forwards it to Claude API with a structured system prompt containing ServiceNow API context, table schemas, and output format rules — keeping credentials off the browser.</p>
-                    </div>
-                    <div class="arch-step">
-                        <span class="step-num">3</span>
-                        <p><strong>Claude AI — Intent Parsing</strong> — Claude interprets the user's intent and outputs a structured JSON object containing the target ServiceNow table, encoded filter query, selected fields, and HTTP method (GET / POST / PATCH).</p>
-                    </div>
-                    <div class="arch-step">
-                        <span class="step-num">4</span>
-                        <p><strong>ServiceNow REST API Call</strong> — The proxy uses Claude's output to construct and execute the ServiceNow Scripted REST API call, retrieving or mutating the relevant records on the developer instance (PDI).</p>
-                    </div>
-                    <div class="arch-step">
-                        <span class="step-num">5</span>
-                        <p><strong>Claude AI — Response Formatting</strong> — The raw API JSON is passed back to Claude, which formats it into a clean, human-readable summary, table, or confirmation message tailored to what the user asked.</p>
-                    </div>
-                </div>
+        <nav class="case-index" aria-label="Projects on this page">
+            <div class="case-index-track">
+                <a href="#homeset" class="accent-homeset">Homeset</a>
+                <a href="#sn-claude" class="accent-ai">ServiceNow × Claude</a>
+                <a href="#nexauto" class="accent-nexauto">NEXAUTO</a>
+                <a href="#biztrack" class="accent-biztrack">BizTrack</a>
+                <a href="#daily-brief" class="accent-brief">Daily Brief</a>
+                <a href="#planner" class="accent-planner">Planner</a>
+                <a href="#pfmt" class="accent-pfmt">Money Tracker</a>
+                <a href="#mini-game" class="accent-rewards">Rewards Tracker</a>
             </div>
+        </nav>
 
-            <!-- Two-column features -->
-            <div class="featured-features">
-                <div class="feat-col">
-                    <h4><i class="fas fa-code"></i> What It Does</h4>
-                    <ul>
-                        <li>Natural language interface to query, create, and update ServiceNow records without portal access</li>
-                        <li>Claude AI dynamically constructs the correct ServiceNow table, filter query, and REST method</li>
-                        <li>Supports incident queries, change request creation, and knowledge base search</li>
-                        <li>AI-formatted responses — readable summaries and tables instead of raw JSON</li>
-                        <li>Live integration with a personal ServiceNow developer instance (PDI)</li>
-                        <li>Secure Node.js proxy layer keeps Anthropic and ServiceNow credentials off the client</li>
-                        <li>Error handling with fallback messages when Claude output fails validation</li>
-                    </ul>
-                </div>
-                <div class="feat-col">
-                    <h4><i class="fas fa-lightbulb"></i> What I Learned</h4>
-                    <ul>
-                        <li>How to craft effective system prompts that constrain Claude's output to valid API parameters</li>
-                        <li>ServiceNow Scripted REST API — creating custom endpoints, encoded filters, and field queries</li>
-                        <li>Designing a reliable JSON output schema for LLMs to follow consistently across varied inputs</li>
-                        <li>Building a backend proxy to orchestrate multi-step AI + API calls securely</li>
-                        <li>Handling edge cases where AI output must be validated before hitting external systems</li>
-                        <li>The practical power — and limits — of combining LLMs with structured enterprise REST APIs</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="case-list">
 
-            <div class="project-tags">
-                <span>Claude API</span>
-                <span>ServiceNow PDI</span>
-                <span>Scripted REST API</span>
-                <span>Node.js</span>
-                <span>JavaScript</span>
-                <span>Prompt Engineering</span>
-                <span>AI Agent</span>
-                <span>Natural Language UI</span>
-            </div>
-        </div>
-
-        <!-- ===== Other Projects ===== -->
-        <div class="projects-section" id="other-projects">
-            <h2 class="projects-heading"><i class="fas fa-folder-open"></i> Other Projects</h2>
-            <div class="projects-grid">
-
-                <div class="project-card featured-second" id="pfmt">
-                    <div class="feat2-header">
-                        <div class="feat2-icon">
-                            <i class="fas fa-wallet"></i>
-                        </div>
+            <!-- ===== Homeset ===== -->
+            <article class="case accent-homeset" id="homeset">
+                <header class="case-head">
+                    <div class="case-title">
+                        <span class="case-icon"><i class="fas fa-cube"></i></span>
                         <div>
-                            <h3>Personal Finance Money Tracker</h3>
-                            <span class="feat2-sub">PFMT · Hosted on GitHub Pages</span>
+                            <span class="eyebrow">Personal product · PropTech</span>
+                            <h2>Homeset</h2>
+                            <p class="case-sub">Floor plan to furnished 3D home tour</p>
                         </div>
                     </div>
-                    <p>A full-featured personal finance web application that uses <strong>ServiceNow as its cloud backend</strong> via Scripted REST APIs — demonstrating real-world use of ServiceNow beyond enterprise workflows. Tracks transactions, budgets, savings goals, and spending analytics with local-first optimistic sync and optional Groq AI insights.</p>
-                    <ul>
-                        <li>Transaction tracking — income, expenses, and transfers across multiple accounts</li>
-                        <li>Budget management with category-level tracking and real-time spent calculations</li>
-                        <li>Savings goals with visual progress monitoring</li>
-                        <li>Spending analytics and category breakdowns</li>
-                        <li>Optimistic local updates (localStorage) with async ServiceNow cloud sync</li>
-                        <li>Custom token-based authentication with 7-day session and 4-digit PIN lock</li>
-                        <li>Recurring transaction automation via ServiceNow scheduled flows</li>
-                        <li>Monthly budget reset workflow running on ServiceNow</li>
-                        <li>Optional Groq AI integration for spending insights and suggestions</li>
-                        <li>Automated CI/CD pipeline via GitHub Actions for build and deployment</li>
-                        <li>Fully hosted and publicly accessible on GitHub Pages</li>
-                    </ul>
-                    <div class="project-tags">
-                        <span>HTML5 / CSS3 / JS</span>
-                        <span>ServiceNow PDI</span>
-                        <span>Scripted REST API</span>
-                        <span>Groq AI</span>
-                        <span>GitHub Actions</span>
-                        <span>GitHub Pages</span>
-                        <span>LocalStorage Sync</span>
-                        <span>CI/CD</span>
+                    <div class="case-links">
+                        <a class="btn-accent" href="https://yapseng98.github.io/Homeset/" target="_blank" rel="noopener">Live demo <i class="fas fa-arrow-up-right-from-square"></i><span class="visually-hidden"> (opens in a new tab)</span></a>
+                        <span class="case-links-note">Demo data stays in your browser</span>
+                    </div>
+                </header>
+
+                <p class="case-lede">A design-to-sale platform for property agents in <strong>Malaysia and Singapore</strong>. Upload a floor plan, trace it, and get a furnished 3D home that buyers can walk through, view as photoreal 360° "Real View" rooms, and use to contact the agent on WhatsApp.</p>
+
+                <dl class="case-stats">
+                    <div><dt>data model drives the 2D plan, 3D view, photos and 360° rooms</dt><dd>1</dd></div>
+                    <div><dt>per path-traced 360° room on an Apple M2</dt><dd>≈90 s</dd></div>
+                    <div><dt>languages — English, Bahasa Malaysia, 中文</dt><dd>3</dd></div>
+                </dl>
+
+                <figure class="flow">
+                    <figcaption class="flow-title"><i class="fas fa-sitemap"></i> One model, many views</figcaption>
+                    <div class="flow-nodes">
+                        <div class="flow-node"><i class="fas fa-pen-ruler"></i><span class="node-name">2D editor</span><span class="node-tech">trace walls, rooms</span></div>
+                        <div class="flow-arrow"><span class="flow-label">commands</span></div>
+                        <div class="flow-node"><i class="fas fa-diagram-project"></i><span class="node-name">HomeModel</span><span class="node-tech">zod schema · undo</span></div>
+                        <div class="flow-arrow"><span class="flow-label">render</span></div>
+                        <div class="flow-node"><i class="fas fa-cube"></i><span class="node-name">three.js viewer</span><span class="node-tech">walk · HD photo · 360°</span></div>
+                        <div class="flow-arrow"><span class="flow-label">publish</span></div>
+                        <div class="flow-node"><i class="fas fa-mobile-screen"></i><span class="node-name">Buyer tour</span><span class="node-tech">link · QR · WhatsApp</span></div>
+                    </div>
+                </figure>
+
+                <div class="case-cols">
+                    <div class="case-col">
+                        <h3><i class="fas fa-wand-magic-sparkles"></i> What it does</h3>
+                        <ul class="dot-list">
+                            <li>Trace walls over an uploaded plan with snapping and exact lengths; rooms and areas (sq ft and m²) are detected automatically</li>
+                            <li>Dollhouse view and first-person walk-through with collision, WASD and a phone joystick</li>
+                            <li>Path-traced HD photos and 360° Real View panoramas, with doorway markers to step between rooms</li>
+                            <li>Publish a tour with MY (REN/REA) or SG (CEA) agent details; share by link, QR code or WhatsApp with a PDPA-consented enquiry form</li>
+                            <li>Insights: views, visitors, leads and time spent in each room</li>
+                        </ul>
+                    </div>
+                    <div class="case-col">
+                        <h3><i class="fas fa-code"></i> How it's built</h3>
+                        <ul class="dot-list">
+                            <li><strong>TypeScript monorepo:</strong> a core package (schema, geometry, region rules), a framework-free three.js viewer, a Fastify + SQLite API and a React web app</li>
+                            <li>One <strong>HomeModel</strong> JSON drives every view, and every edit is a command — undo/redo now, collaboration and audit later</li>
+                            <li>A browser-only build on GitHub Pages implements the same API on IndexedDB</li>
+                            <li>Photoscanned CC0 furniture, PBR materials, daylight through windows and ambient occlusion</li>
+                            <li>Unit, API and headless-Chrome end-to-end tests</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="project-card featured-second" id="planner">
-                    <div class="feat2-header">
-                        <div class="feat2-icon">
-                            <i class="fas fa-calendar-check"></i>
-                        </div>
+                <ul class="chips">
+                    <li>TypeScript</li>
+                    <li>React</li>
+                    <li>three.js</li>
+                    <li>Path tracing</li>
+                    <li>Fastify</li>
+                    <li>SQLite</li>
+                    <li>zod</li>
+                    <li>Vite</li>
+                </ul>
+            </article>
+
+            <!-- ===== ServiceNow x Claude AI ===== -->
+            <article class="case accent-ai" id="sn-claude">
+                <header class="case-head">
+                    <div class="case-title">
+                        <span class="case-icon"><i class="fas fa-robot"></i></span>
                         <div>
-                            <h3>Personal Planning System</h3>
-                            <span class="feat2-sub">Offline-First PWA · Hosted on GitHub Pages</span>
+                            <span class="eyebrow">AI integration · ServiceNow</span>
+                            <h2>ServiceNow × Claude AI</h2>
+                            <p class="case-sub">A natural-language interface to ServiceNow</p>
                         </div>
                     </div>
-                    <p>An offline-first progressive web app for hierarchical goal planning — <strong>Vision → Year → Quarter → Month → Week → Day</strong> — with ServiceNow as the system of record and full cross-device sync.</p>
-                    <ul>
-                        <li>Hierarchical planning with automatic rollup of task completion up to parent goals</li>
-                        <li>Today dashboard with habit tracking, time-blocked tasks, and daily insights</li>
-                        <li>Daily, weekly, monthly, and yearly review templates</li>
-                        <li>Analytics dashboard tracking completion rates and mood trends over time</li>
-                        <li>Full offline support via service workers, with automatic sync when back online</li>
-                        <li>Custom token-based authentication — no OAuth dependency</li>
-                    </ul>
-                    <div class="project-tags">
-                        <span>React</span>
-                        <span>TypeScript</span>
-                        <span>Vite</span>
-                        <span>PWA</span>
-                        <span>IndexedDB</span>
-                        <span>ServiceNow</span>
-                        <span>Offline-First</span>
+                </header>
+
+                <p class="case-lede">A web app that lets people work with ServiceNow records in <strong>plain English</strong> instead of navigating the portal. It explores large language models as an interface layer over enterprise REST APIs — combining ServiceNow expertise with hands-on AI agent development.</p>
+
+                <dl class="case-stats">
+                    <div><dt>Claude calls per request — parse the intent, then format the answer</dt><dd>2</dd></div>
+                    <div><dt>HTTP methods it can generate — GET, POST, PATCH</dt><dd>3</dd></div>
+                    <div><dt>API keys in the browser — the proxy holds them</dt><dd>0</dd></div>
+                </dl>
+
+                <figure class="flow">
+                    <figcaption class="flow-title"><i class="fas fa-sitemap"></i> System architecture</figcaption>
+                    <div class="flow-nodes">
+                        <div class="flow-node accent-ai"><i class="fas fa-display"></i><span class="node-name">Web app</span><span class="node-tech">HTML / CSS / JS</span></div>
+                        <div class="flow-arrow"><span class="flow-label">user query</span></div>
+                        <div class="flow-node accent-homeset"><i class="fas fa-shield-halved"></i><span class="node-name">Proxy layer</span><span class="node-tech">Node.js / Express</span></div>
+                        <div class="flow-arrow"><span class="flow-label">prompt + context</span></div>
+                        <div class="flow-node accent-planner"><i class="fas fa-brain"></i><span class="node-name">Claude AI</span><span class="node-tech">Anthropic API</span></div>
+                        <div class="flow-arrow"><span class="flow-label">API params</span></div>
+                        <div class="flow-node accent-servicenow"><i class="fas fa-server"></i><span class="node-name">ServiceNow</span><span class="node-tech">Scripted REST API</span></div>
+                    </div>
+                    <p class="flow-return"><i class="fas fa-rotate-left"></i> Response path: ServiceNow raw data → Claude formats → web app displays</p>
+                    <ol class="flow-steps">
+                        <li><span><strong>User query</strong> — type a request such as <em>"Show all open P1 incidents assigned to my team this week"</em> or <em>"Create a high priority incident for the email server being down."</em></span></li>
+                        <li><span><strong>Secure proxy</strong> — the Node.js layer forwards it to Claude with a system prompt holding ServiceNow API context, table schemas and output rules, keeping credentials off the browser.</span></li>
+                        <li><span><strong>Intent parsing</strong> — Claude returns structured JSON: target table, encoded query, fields and HTTP method.</span></li>
+                        <li><span><strong>ServiceNow call</strong> — the proxy validates that JSON, then runs the Scripted REST call against a personal developer instance.</span></li>
+                        <li><span><strong>Response formatting</strong> — the raw JSON goes back to Claude, which writes a readable summary, table or confirmation.</span></li>
+                    </ol>
+                </figure>
+
+                <div class="case-cols">
+                    <div class="case-col">
+                        <h3><i class="fas fa-wand-magic-sparkles"></i> What it does</h3>
+                        <ul class="dot-list">
+                            <li>Query, create and update ServiceNow records without opening the portal</li>
+                            <li>Claude picks the table, filter query and REST method for each request</li>
+                            <li>Supports incident queries, change request creation and knowledge base search</li>
+                            <li>Readable summaries and tables instead of raw JSON</li>
+                            <li>Fallback messages when Claude's output fails validation</li>
+                        </ul>
+                    </div>
+                    <div class="case-col">
+                        <h3><i class="fas fa-lightbulb"></i> What I learned</h3>
+                        <ul class="dot-list">
+                            <li>Writing system prompts that constrain an LLM to valid API parameters</li>
+                            <li>Designing a JSON output schema an LLM follows consistently across varied inputs</li>
+                            <li>ServiceNow Scripted REST — custom endpoints, encoded queries, field selection</li>
+                            <li>Validating AI output before it touches an external system</li>
+                            <li>The practical power — and limits — of LLMs over structured enterprise APIs</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="project-card featured-second" id="mini-game">
-                    <div class="feat2-header">
-                        <div class="feat2-icon">
-                            <i class="fas fa-gamepad"></i>
-                        </div>
+                <ul class="chips">
+                    <li>Claude API</li>
+                    <li>ServiceNow PDI</li>
+                    <li>Scripted REST API</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>Prompt engineering</li>
+                    <li>AI agent</li>
+                </ul>
+            </article>
+
+            <!-- ===== NEXAUTO ===== -->
+            <article class="case accent-nexauto" id="nexauto">
+                <header class="case-head">
+                    <div class="case-title">
+                        <span class="case-icon"><i class="fas fa-car-side"></i></span>
                         <div>
-                            <h3>Shared Rewards Tracker</h3>
-                            <span class="feat2-sub">Gamified Points App · Hosted on GitHub Pages</span>
+                            <span class="eyebrow">Personal product · Operations</span>
+                            <h2>NEXAUTO</h2>
+                            <p class="case-sub">Workshop operations for auto repair shops</p>
                         </div>
                     </div>
-                    <p>A gamified points-and-rewards web app for two connected accounts, built with <strong>vanilla JavaScript</strong> and a <strong>ServiceNow Scripted REST API</strong> backend — exploring real-time sync and lightweight game mechanics without a framework.</p>
-                    <ul>
-                        <li>Dual-account scoring system with a shared, real-time ledger</li>
-                        <li>Custom point categories with configurable values and pooled "joint goal" targets</li>
-                        <li>Shared virtual space with draggable, customisable elements synced live between accounts</li>
-                        <li>Achievement badges generated dynamically from real activity history</li>
-                        <li>Dynamic environment theming tied to time of day and calendar events</li>
-                        <li>Offline-friendly demo mode backed by localStorage</li>
-                    </ul>
-                    <div class="project-tags">
-                        <span>Vanilla JS</span>
-                        <span>ServiceNow</span>
-                        <span>Scripted REST API</span>
-                        <span>Real-Time Sync</span>
-                        <span>Gamification</span>
-                        <span>GitHub Pages</span>
+                    <div class="case-links">
+                        <a class="btn-accent" href="https://yapseng98.github.io/NEXAUTO/" target="_blank" rel="noopener">Live demo <i class="fas fa-arrow-up-right-from-square"></i><span class="visually-hidden"> (opens in a new tab)</span></a>
+                        <span class="case-links-note">Demo accounts are on the sign-in screen</span>
+                    </div>
+                </header>
+
+                <p class="case-lede">Vehicle check-in, inspection, quotation, service, payment, parts inventory, purchasing, customer follow-ups and role-based access — <strong>in one app that works on phone and laptop</strong>. The business rules mirror how a real workshop runs, down to who is allowed to see cost prices.</p>
+
+                <dl class="case-stats">
+                    <div><dt>automated end-to-end checks, all passing</dt><dd>617</dd></div>
+                    <div><dt>roles, with a permission matrix the owner edits live</dt><dd>4</dd></div>
+                    <div><dt>modules, from sign-in to settings</dt><dd>9</dd></div>
+                </dl>
+
+                <figure class="flow">
+                    <figcaption class="flow-title"><i class="fas fa-route"></i> Work-order lifecycle</figcaption>
+                    <div class="flow-nodes">
+                        <div class="flow-node"><i class="fas fa-car"></i><span class="node-name">Check in</span><span class="node-tech">vehicle + customer</span></div>
+                        <div class="flow-arrow"><span class="flow-label">inspect</span></div>
+                        <div class="flow-node"><i class="fas fa-file-invoice-dollar"></i><span class="node-name">Quote</span><span class="node-tech">findings → items</span></div>
+                        <div class="flow-arrow"><span class="flow-label">approved</span></div>
+                        <div class="flow-node"><i class="fas fa-screwdriver-wrench"></i><span class="node-name">Service</span><span class="node-tech">parts reserved</span></div>
+                        <div class="flow-arrow"><span class="flow-label">done</span></div>
+                        <div class="flow-node"><i class="fas fa-cash-register"></i><span class="node-name">Pay &amp; follow up</span><span class="node-tech">money owed tracked</span></div>
+                    </div>
+                </figure>
+
+                <div class="case-cols">
+                    <div class="case-col">
+                        <h3><i class="fas fa-wand-magic-sparkles"></i> What it does</h3>
+                        <ul class="dot-list">
+                            <li>Inspection checklist → printable customer quote → approve or decline, with follow-ups for declined jobs</li>
+                            <li>Extra work added mid-job needs approval and blocks payment until it gets it</li>
+                            <li>"Money owed" keeps promised payments out of revenue until they actually arrive</li>
+                            <li>Inventory with on-hand, reserved and available stock, purchase orders, receiving and suppliers</li>
+                            <li>Insights on stalled jobs, stock to reorder and customers worth calling; reports on margin, approval rate and revenue per technician</li>
+                        </ul>
+                    </div>
+                    <div class="case-col">
+                        <h3><i class="fas fa-code"></i> How it's built</h3>
+                        <ul class="dot-list">
+                            <li>Owner, Manager, Advisor and Technician roles — technicians see only their own jobs and never see prices</li>
+                            <li>Per-user sign-in, lockout after five failed attempts, 12-hour sessions</li>
+                            <li>The whole app is one HTML file with no framework; the demo stores data in the browser</li>
+                            <li>Documented data model, process, permission matrix, security review and a Supabase migration plan</li>
+                            <li>A jsdom test suite that signs in through the real form and clicks through every process as each role</li>
+                        </ul>
                     </div>
                 </div>
 
-            </div>
+                <ul class="chips">
+                    <li>Vanilla JS</li>
+                    <li>HTML / CSS</li>
+                    <li>RBAC</li>
+                    <li>Inventory</li>
+                    <li>jsdom</li>
+                    <li>E2E testing</li>
+                </ul>
+            </article>
+
+            <!-- ===== BizTrack ===== -->
+            <article class="case accent-biztrack" id="biztrack">
+                <header class="case-head">
+                    <div class="case-title">
+                        <span class="case-icon"><i class="fas fa-sitemap"></i></span>
+                        <div>
+                            <span class="eyebrow">Personal product · CRM</span>
+                            <h2>BizTrack</h2>
+                            <p class="case-sub">A business manager on a custom ServiceNow app</p>
+                        </div>
+                    </div>
+                    <div class="case-links">
+                        <a class="btn-accent" href="https://yapseng98.github.io/personal_business/" target="_blank" rel="noopener">Live demo <i class="fas fa-arrow-up-right-from-square"></i><span class="visually-hidden"> (opens in a new tab)</span></a>
+                        <span class="case-links-note">Click "Explore the demo" — no account needed</span>
+                    </div>
+                </header>
+
+                <p class="case-lede">A CRM for running a direct-sales business — customers, a partner network, activities, purchases and goals. The frontend is a modern React app; the backend is <strong>a custom ServiceNow scoped application</strong> with its own REST resources and token authentication, not the stock Table API.</p>
+
+                <dl class="case-stats">
+                    <div><dt>custom tables behind the scoped app</dt><dd>6</dd></div>
+                    <div><dt>modules — dashboard, customers, purchases, partners, activities, goals, products</dt><dd>7</dd></div>
+                    <div><dt>accounts needed to try the in-memory demo</dt><dd>0</dd></div>
+                </dl>
+
+                <figure class="flow">
+                    <figcaption class="flow-title"><i class="fas fa-sitemap"></i> Architecture</figcaption>
+                    <div class="flow-nodes">
+                        <div class="flow-node accent-ai"><i class="fab fa-react"></i><span class="node-name">React SPA</span><span class="node-tech">Vite · React Query</span></div>
+                        <div class="flow-arrow"><span class="flow-label">token header</span></div>
+                        <div class="flow-node"><i class="fas fa-key"></i><span class="node-name">Auth API</span><span class="node-tech">register · login · logout</span></div>
+                        <div class="flow-arrow"><span class="flow-label">verified</span></div>
+                        <div class="flow-node accent-servicenow"><i class="fas fa-server"></i><span class="node-name">Scoped app</span><span class="node-tech">Scripted REST</span></div>
+                        <div class="flow-arrow"><span class="flow-label">owner-scoped</span></div>
+                        <div class="flow-node accent-servicenow"><i class="fas fa-table"></i><span class="node-name">6 tables</span><span class="node-tech">customers · partners · activities</span></div>
+                    </div>
+                </figure>
+
+                <div class="case-cols">
+                    <div class="case-col">
+                        <h3><i class="fas fa-wand-magic-sparkles"></i> What it does</h3>
+                        <ul class="dot-list">
+                            <li>Dashboard with overview stats, a monthly revenue chart and upcoming activities</li>
+                            <li>Customer records with per-customer purchase history</li>
+                            <li>Partner network with sponsor links shown as an interactive org tree, plus one-tap WhatsApp</li>
+                            <li>Activity calendar with a map of locations, WhatsApp invites and bulk upload from a spreadsheet</li>
+                            <li>Goals with progress tracking, and a demo mode with realistic sample data</li>
+                        </ul>
+                    </div>
+                    <div class="case-col">
+                        <h3><i class="fas fa-code"></i> How it's built</h3>
+                        <ul class="dot-list">
+                            <li>Vite, React 18 and TypeScript with Tailwind CSS, TanStack React Query and React Router</li>
+                            <li>Recharts for charts, Leaflet for maps, React Flow + dagre for the auto-laid-out org tree</li>
+                            <li>A ServiceNow scoped app with Script Includes and Scripted REST resources</li>
+                            <li>Custom token auth: the session token travels in its own request header</li>
+                            <li>Records are scoped to the owner and their downline; activities are shared</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="chips">
+                    <li>React</li>
+                    <li>TypeScript</li>
+                    <li>Tailwind CSS</li>
+                    <li>ServiceNow</li>
+                    <li>Scripted REST</li>
+                    <li>React Flow</li>
+                    <li>Leaflet</li>
+                </ul>
+            </article>
+
+            <!-- ===== Daily Brief ===== -->
+            <article class="case accent-brief" id="daily-brief">
+                <header class="case-head">
+                    <div class="case-title">
+                        <span class="case-icon"><i class="fas fa-inbox"></i></span>
+                        <div>
+                            <span class="eyebrow">AI tool · Productivity</span>
+                            <h2>Daily Brief</h2>
+                            <p class="case-sub">Turns an AI-written work brief into tasks</p>
+                        </div>
+                    </div>
+                </header>
+
+                <p class="case-lede">Paste the daily AI summary of your mailbox and the app sorts it into <strong>what's pending you, what you're waiting on, meetings and FYI</strong> — then sends the items you'll handle straight into the Personal Planning System as real tasks.</p>
+
+                <dl class="case-stats">
+                    <div><dt>brief layouts it can read, from a JSON block to free-text reports</dt><dd>5</dd></div>
+                    <div><dt>login shared with the Planner</dt><dd>1</dd></div>
+                    <div><dt>days before old briefs, dismissed items and history are cleaned up</dt><dd>30/90/180</dd></div>
+                </dl>
+
+                <figure class="flow">
+                    <figcaption class="flow-title"><i class="fas fa-sitemap"></i> How a brief becomes tasks</figcaption>
+                    <div class="flow-nodes">
+                        <div class="flow-node"><i class="fas fa-envelope-open-text"></i><span class="node-name">AI brief</span><span class="node-tech">pasted text / JSON</span></div>
+                        <div class="flow-arrow"><span class="flow-label">paste</span></div>
+                        <div class="flow-node"><i class="fas fa-filter"></i><span class="node-name">Parser</span><span class="node-tech">ownership · priority</span></div>
+                        <div class="flow-arrow"><span class="flow-label">items</span></div>
+                        <div class="flow-node"><i class="fas fa-list-check"></i><span class="node-name">Daily Brief</span><span class="node-tech">Today · My Tasks</span></div>
+                        <div class="flow-arrow"><span class="flow-label">take</span></div>
+                        <div class="flow-node accent-planner"><i class="fas fa-calendar-check"></i><span class="node-name">Planner</span><span class="node-tech">sync_push() RPC</span></div>
+                    </div>
+                </figure>
+
+                <div class="case-cols">
+                    <div class="case-col">
+                        <h3><i class="fas fa-wand-magic-sparkles"></i> What it does</h3>
+                        <ul class="dot-list">
+                            <li>Reads several brief layouts — a structured JSON block first, then ownership, priority and executive reports</li>
+                            <li>Splits items by ownership: pending you, owned by your team, or waiting on others</li>
+                            <li>Keeps each item's email trail — subject, last sender, age and how confident the action is</li>
+                            <li>"Take" creates a real Planner task; edits and done-state flow both ways</li>
+                            <li>Stores your own AI prompt per account, so it's on every device</li>
+                        </ul>
+                    </div>
+                    <div class="case-col">
+                        <h3><i class="fas fa-code"></i> How it's built</h3>
+                        <ul class="dot-list">
+                            <li>React 19, TypeScript and Vite on Supabase with row-level security</li>
+                            <li>Shares the Planner's Supabase project and sign-in</li>
+                            <li>Writes tasks only through the Planner's own sync RPC, so revisions stay consistent across devices</li>
+                            <li>Deterministic task IDs per account and item — taking an item again updates the same task</li>
+                            <li>Live updates over Supabase Realtime; Vitest regression tests on made-up sample briefs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="chips">
+                    <li>React 19</li>
+                    <li>TypeScript</li>
+                    <li>Supabase</li>
+                    <li>Realtime</li>
+                    <li>Vitest</li>
+                    <li>LLM output parsing</li>
+                </ul>
+            </article>
+
+            <!-- ===== Personal Planning System ===== -->
+            <article class="case accent-planner" id="planner">
+                <header class="case-head">
+                    <div class="case-title">
+                        <span class="case-icon"><i class="fas fa-calendar-check"></i></span>
+                        <div>
+                            <span class="eyebrow">Offline-first PWA</span>
+                            <h2>Personal Planning System</h2>
+                            <p class="case-sub">Vision → Year → Quarter → Month → Week → Day</p>
+                        </div>
+                    </div>
+                </header>
+
+                <p class="case-lede">A planning app that installs on phone, iPad and laptop and <strong>works fully offline</strong>. Goals at every level roll up automatically, and an optional AI layer drafts daily briefings and reviews. It began on a ServiceNow developer instance and moved to Supabase in September 2026.</p>
+
+                <dl class="case-stats">
+                    <div><dt>planning levels, from vision down to today</dt><dd>6</dd></div>
+                    <div><dt>writes queue locally in IndexedDB and sync when online</dt><dd>Offline</dd></div>
+                    <div><dt>languages — English and 中文</dt><dd>2</dd></div>
+                </dl>
+
+                <figure class="flow">
+                    <figcaption class="flow-title"><i class="fas fa-sitemap"></i> Sync engine</figcaption>
+                    <div class="flow-nodes">
+                        <div class="flow-node"><i class="fab fa-react"></i><span class="node-name">React PWA</span><span class="node-tech">service worker</span></div>
+                        <div class="flow-arrow"><span class="flow-label">writes</span></div>
+                        <div class="flow-node"><i class="fas fa-hard-drive"></i><span class="node-name">IndexedDB</span><span class="node-tech">Dexie · offline</span></div>
+                        <div class="flow-arrow"><span class="flow-label">outbox</span></div>
+                        <div class="flow-node"><i class="fas fa-arrows-rotate"></i><span class="node-name">Sync engine</span><span class="node-tech">push / pull</span></div>
+                        <div class="flow-arrow"><span class="flow-label">online</span></div>
+                        <div class="flow-node accent-pfmt"><i class="fas fa-database"></i><span class="node-name">Supabase</span><span class="node-tech">Postgres · RLS</span></div>
+                    </div>
+                </figure>
+
+                <div class="case-cols">
+                    <div class="case-col">
+                        <h3><i class="fas fa-wand-magic-sparkles"></i> What it does</h3>
+                        <ul class="dot-list">
+                            <li>Today view with an AI-drafted briefing, habit rings with streaks and time-blocked tasks</li>
+                            <li>Finishing a task moves its week goal, which averages up to month, quarter and year</li>
+                            <li>Week and month planning, plus a Jira-style board with drag and drop</li>
+                            <li>Habit heatmaps; daily, weekly, monthly and yearly reviews pre-filled with your stats</li>
+                            <li>Sketches, analytics, Cmd/Ctrl+K search and recurring tasks</li>
+                        </ul>
+                    </div>
+                    <div class="case-col">
+                        <h3><i class="fas fa-code"></i> How it's built</h3>
+                        <ul class="dot-list">
+                            <li>React, TypeScript and Vite, installable as a PWA</li>
+                            <li>The UI reads and writes IndexedDB (Dexie); an outbox engine syncs to Supabase, last write wins</li>
+                            <li>Postgres schema with row-level security and server functions for sync and goal rollups</li>
+                            <li>An optional Cloudflare Worker proxies AI calls — the app works fine without it</li>
+                            <li>Migrated from a ServiceNow backend to Supabase in September 2026</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="chips">
+                    <li>React</li>
+                    <li>TypeScript</li>
+                    <li>PWA</li>
+                    <li>Dexie / IndexedDB</li>
+                    <li>Supabase</li>
+                    <li>Cloudflare Workers</li>
+                </ul>
+            </article>
+
+            <!-- ===== PFMT ===== -->
+            <article class="case accent-pfmt" id="pfmt">
+                <header class="case-head">
+                    <div class="case-title">
+                        <span class="case-icon"><i class="fas fa-wallet"></i></span>
+                        <div>
+                            <span class="eyebrow">Personal finance</span>
+                            <h2>Personal Finance Money Tracker</h2>
+                            <p class="case-sub">Budgets, bills and goals — with alerts on Telegram</p>
+                        </div>
+                    </div>
+                </header>
+
+                <p class="case-lede">Track transactions across currencies, hold budgets and savings goals, tick off the bills you pay each month, and <strong>get a Telegram message when a budget or bill needs attention</strong> — all from a single HTML file on GitHub Pages. It started on a ServiceNow developer instance and now runs on Supabase.</p>
+
+                <dl class="case-stats">
+                    <div><dt>currencies — SGD, USD, AUD, MYR, USDT</dt><dd>5</dd></div>
+                    <div><dt>HTML file — no build step, no bundler</dt><dd>1</dd></div>
+                    <div><dt>job checks budgets and bills, then alerts on Telegram</dt><dd>Nightly</dd></div>
+                </dl>
+
+                <figure class="flow">
+                    <figcaption class="flow-title"><i class="fas fa-sitemap"></i> Architecture</figcaption>
+                    <div class="flow-nodes">
+                        <div class="flow-node"><i class="fas fa-file-code"></i><span class="node-name">Single-file app</span><span class="node-tech">localStorage cache</span></div>
+                        <div class="flow-arrow"><span class="flow-label">JWT</span></div>
+                        <div class="flow-node"><i class="fas fa-database"></i><span class="node-name">Supabase</span><span class="node-tech">Postgres · RLS · Auth</span></div>
+                        <div class="flow-arrow"><span class="flow-label">pg_cron</span></div>
+                        <div class="flow-node"><i class="fas fa-bolt"></i><span class="node-name">Edge Function</span><span class="node-tech">Deno</span></div>
+                        <div class="flow-arrow"><span class="flow-label">alert</span></div>
+                        <div class="flow-node accent-biztrack"><i class="fab fa-telegram"></i><span class="node-name">Telegram</span><span class="node-tech">Bot API</span></div>
+                    </div>
+                </figure>
+
+                <div class="case-cols">
+                    <div class="case-col">
+                        <h3><i class="fas fa-wand-magic-sparkles"></i> What it does</h3>
+                        <ul class="dot-list">
+                            <li>Accounts in several currencies, with a home-currency total at the day's exchange rates</li>
+                            <li>Per-currency budgets with rollover, custom alert thresholds and a "plan from salary" allocator</li>
+                            <li>A monthly bills checklist, savings goals linked to accounts and net worth over time</li>
+                            <li>Import a bank's CSV statement; export monthly statements as PDF, Excel or CSV</li>
+                            <li>Optional Groq AI spending insights using your own key</li>
+                        </ul>
+                    </div>
+                    <div class="case-col">
+                        <h3><i class="fas fa-code"></i> How it's built</h3>
+                        <ul class="dot-list">
+                            <li>Vanilla JS, HTML and CSS in one file — opening it is running it</li>
+                            <li>Supabase Postgres with row-level security and Supabase Auth sessions</li>
+                            <li>A Deno Edge Function sends Telegram alerts, triggered nightly by pg_cron</li>
+                            <li>A localStorage cache makes loads instant and keeps it usable offline</li>
+                            <li>Automated tests for the bills and alerts logic</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="chips">
+                    <li>Vanilla JS</li>
+                    <li>Supabase</li>
+                    <li>Edge Functions</li>
+                    <li>pg_cron</li>
+                    <li>Telegram Bot API</li>
+                    <li>Groq AI</li>
+                </ul>
+            </article>
+
+            <!-- ===== Shared Rewards Tracker ===== -->
+            <article class="case accent-rewards" id="mini-game">
+                <header class="case-head">
+                    <div class="case-title">
+                        <span class="case-icon"><i class="fas fa-gamepad"></i></span>
+                        <div>
+                            <span class="eyebrow">Gamified app</span>
+                            <h2>Shared Rewards Tracker</h2>
+                            <p class="case-sub">Points, goals and a shared virtual space for two</p>
+                        </div>
+                    </div>
+                </header>
+
+                <p class="case-lede">Two accounts, one shared ledger. Log the small things you do for each other and watch them add up — into points, a joint goal, <strong>a pet that grows and a room you decorate together</strong>. The whole app follows your phone: the palette tracks the time of day, the moon is the real moon, and local weather falls across the page.</p>
+
+                <dl class="case-stats">
+                    <div><dt>Edge Functions hold every business rule</dt><dd>27</dd></div>
+                    <div><dt>Postgres tables, all with row-level security</dt><dd>12</dd></div>
+                    <div><dt>hand-drawn SVG furniture pieces</dt><dd>32</dd></div>
+                </dl>
+
+                <figure class="flow">
+                    <figcaption class="flow-title"><i class="fas fa-sitemap"></i> Architecture</figcaption>
+                    <div class="flow-nodes">
+                        <div class="flow-node"><i class="fas fa-mobile-screen"></i><span class="node-name">Browser app</span><span class="node-tech">vanilla JS · no build</span></div>
+                        <div class="flow-arrow"><span class="flow-label">bearer token</span></div>
+                        <div class="flow-node accent-pfmt"><i class="fas fa-bolt"></i><span class="node-name">Edge Functions</span><span class="node-tech">27 · all writes</span></div>
+                        <div class="flow-arrow"><span class="flow-label">service role</span></div>
+                        <div class="flow-node accent-pfmt"><i class="fas fa-database"></i><span class="node-name">Postgres + Storage</span><span class="node-tech">12 tables · signed URLs</span></div>
+                    </div>
+                    <p class="flow-return"><i class="fas fa-lock"></i> Clients can only read under RLS — only a function can write</p>
+                </figure>
+
+                <div class="case-cols">
+                    <div class="case-col">
+                        <h3><i class="fas fa-wand-magic-sparkles"></i> What it does</h3>
+                        <ul class="dot-list">
+                            <li>Custom categories with point values, a monthly target and month-end settlement into history</li>
+                            <li>Joint goals, sealed letters, a photo album slideshow and a yearly recap</li>
+                            <li>16 achievement badges computed from real activity, so they can never be wrong</li>
+                            <li>A pet game: the pet grows from your activity, and furniture placed in the shared room syncs within seconds</li>
+                            <li>10 seasons and festivals with their own palette, sky and particles</li>
+                        </ul>
+                    </div>
+                    <div class="case-col">
+                        <h3><i class="fas fa-code"></i> How it's built</h3>
+                        <ul class="dot-list">
+                            <li>Vanilla JS, HTML and CSS — no framework and no build step</li>
+                            <li>Supabase Edge Functions hold the service-role key; clients are read-only under RLS</li>
+                            <li>Supabase Auth with hashed passwords, plus a private photo bucket served as signed URLs</li>
+                            <li>Ported from a ServiceNow Scripted REST API in September 2026 without changing a single call site in the app</li>
+                            <li>All artwork is hand-drawn SVG, themed per season</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="chips">
+                    <li>Vanilla JS</li>
+                    <li>Supabase</li>
+                    <li>Edge Functions</li>
+                    <li>Row-level security</li>
+                    <li>SVG</li>
+                    <li>Gamification</li>
+                </ul>
+            </article>
+
         </div>
-
     </main>
 
-    <footer>
-        <p>&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <a href="index.html" class="logo">YCS<span class="logo-dot">.</span></a>
+                <p class="footer-tag">Enterprise workflows by day. Full-stack builds by night.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chung-seng-yap-9478111bb/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:ycseng0398@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+        </div>
     </footer>
 
-    <button id="scrollToTopButton" onclick="scrollToTop()" aria-label="Scroll to top">
+    <button id="scrollToTopButton" class="to-top" type="button" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i>
     </button>
 

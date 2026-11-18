@@ -4,97 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decisions Platform — YCS</title>
+    <title>Decisions BPM Projects — Yap Chung Seng</title>
+    <meta name="description" content="Decisions BPM finance workflows built by Yap Chung Seng — approval matrices, recurring billing, bulk Excel upload and real-time SAP integration.">
+    <link rel="canonical" href="https://yapseng98.github.io/ycs_portfolio/decisions.html">
+    <meta name="theme-color" content="#05050f">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Decisions BPM Projects — Yap Chung Seng">
+    <meta property="og:description" content="Finance workflows on Decisions BPM with SAP integration, approval matrices and bulk upload.">
+    <meta property="og:url" content="https://yapseng98.github.io/ycs_portfolio/decisions.html">
+    <meta property="og:image" content="https://yapseng98.github.io/ycs_portfolio/decisions.jpeg">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('ycs-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="skills.css">
 </head>
 
-<body class="page-decisions">
+<body class="accent-decisions">
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo" aria-label="YCS — home">YCS<span class="logo-dot">.</span></a>
+        <nav aria-label="Main">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="personal.html">Case Studies</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+                <i class="fas fa-sun" aria-hidden="true"></i><i class="fas fa-moon" aria-hidden="true"></i>
+            </button>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
     <div class="nav-overlay" id="nav-overlay"></div>
 
-    <nav class="navbar" id="navbar">
-        <div class="logo">YCS<span class="logo-dot">.</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#platforms">Platforms</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <main class="page-main" id="main">
 
-    <main class="page-main">
-        <div class="page-header">
-            <a href="index.html#platforms" class="back-link">
-                <i class="fas fa-arrow-left"></i> Back to Platforms
-            </a>
-            <span class="page-tag">Platform</span>
-            <h1>Decisions Platform</h1>
-            <p class="page-desc">Designed database schemas, developed end-to-end BPM modules, integrated with SAP via REST APIs, supported UAT, and maintained live systems with ongoing iterative enhancements.</p>
-        </div>
+        <header class="page-header">
+            <a href="index.html#work" class="back-link"><i class="fas fa-arrow-left"></i> Back to work</a>
+            <span class="eyebrow">Client work · Platform</span>
+            <h1>Decisions BPM</h1>
+            <p class="page-desc">Database schema design, end-to-end BPM modules, SAP integration over REST, UAT support and ongoing enhancements to live finance systems.</p>
+            <div class="page-meta">
+                <span><i class="fas fa-building"></i> Activants Pte Ltd, Singapore</span>
+                <span><i class="fas fa-calendar"></i> 2023 – Present</span>
+                <span><i class="fas fa-folder-open"></i> 2 projects</span>
+            </div>
+        </header>
 
-        <div class="projects-section">
-            <h2 class="projects-heading"><i class="fas fa-folder-open"></i> Projects</h2>
+        <section aria-labelledby="projects-title">
+            <h2 class="projects-heading" id="projects-title"><i class="fas fa-folder-open"></i> Projects</h2>
             <div class="projects-grid">
 
-                <div class="project-card">
+                <article class="project-card reveal">
+                    <span class="project-num">01</span>
                     <h3>Bill Adjustment and Waiver</h3>
-                    <p>A finance system for processing billing adjustment and waiver requests with a configurable multi-level approval matrix, SAP integration, and full audit traceability.</p>
-                    <ul>
+                    <p>A finance system for billing adjustment and waiver requests, with a configurable multi-level approval matrix, SAP integration and full audit traceability.</p>
+                    <ul class="dot-list">
                         <li>Bulk Excel upload or manual entry for billing requests</li>
-                        <li>Configurable approval matrix by amount threshold and department</li>
-                        <li>Rejection flow with mandatory comments and resubmission capability</li>
-                        <li>Automated email notifications, PDF generation, and full audit trail</li>
+                        <li>Approval matrix configurable by amount threshold and department</li>
+                        <li>Rejection flow with mandatory comments and resubmission</li>
+                        <li>Automated email notifications, PDF generation and a full audit trail</li>
                         <li>Real-time SAP integration for billing data retrieval and GL posting</li>
                     </ul>
-                    <div class="project-tags">
-                        <span>Decisions</span>
-                        <span>BPM</span>
-                        <span>Finance</span>
-                        <span>Approval Matrix</span>
-                        <span>SAP Integration</span>
-                        <span>Bulk Upload</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>Recurring Billing System</h3>
-                    <p>Automates recurring invoice generation with mass Excel upload, configurable billing cycles, multi-level approvals, and real-time SAP integration.</p>
-                    <ul>
-                        <li>Mass upload via Excel template with row-level validation for bulk invoice submission</li>
-                        <li>User-defined billing schedules (monthly / quarterly / annual) with auto-generated invoice forms and PDF export</li>
-                        <li>Multi-level approval with bulk approve / reject and automated email notifications</li>
-                        <li>Real-time SAP sync for GL accounts, cost centres, and internal order data</li>
-                        <li>Dashboard with billing status overview, audit trail, and advanced search / filter</li>
-                        <li>Role-based access: submitter, approver, and finance admin</li>
+                    <ul class="chips">
+                        <li>Decisions</li>
+                        <li>BPM</li>
+                        <li>Finance</li>
+                        <li>Approval matrix</li>
+                        <li>SAP integration</li>
+                        <li>Bulk upload</li>
                     </ul>
-                    <div class="project-tags">
-                        <span>Decisions</span>
-                        <span>SAP Integration</span>
-                        <span>Invoice Automation</span>
-                        <span>Mass Upload</span>
-                        <span>Excel Template</span>
-                        <span>RBAC</span>
-                    </div>
-                </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <span class="project-num">02</span>
+                    <h3>Recurring Billing System</h3>
+                    <p>Automates recurring invoice generation with mass Excel upload, configurable billing cycles, multi-level approvals and real-time SAP integration.</p>
+                    <ul class="dot-list">
+                        <li>Mass upload via an Excel template with row-level validation</li>
+                        <li>Monthly, quarterly or annual billing schedules with auto-generated invoices and PDF export</li>
+                        <li>Multi-level approval with bulk approve / reject and email notifications</li>
+                        <li>Real-time SAP sync for GL accounts, cost centres and internal orders</li>
+                        <li>Dashboard with billing status, audit trail and advanced search</li>
+                        <li>Role-based access for submitter, approver and finance admin</li>
+                    </ul>
+                    <ul class="chips">
+                        <li>Decisions</li>
+                        <li>SAP integration</li>
+                        <li>Invoice automation</li>
+                        <li>Mass upload</li>
+                        <li>Excel template</li>
+                        <li>RBAC</li>
+                    </ul>
+                </article>
 
             </div>
-        </div>
+        </section>
+
+        <nav class="page-next" aria-label="More work">
+            <span class="page-next-label">More work</span>
+            <a class="btn-accent accent-servicenow" href="serviceNow.html">ServiceNow <i class="fas fa-arrow-right"></i></a>
+            <a class="btn-accent accent-power" href="powerApps.html">Power Platform <i class="fas fa-arrow-right"></i></a>
+            <a class="btn-accent accent-ai" href="personal.html">Case studies <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <a href="index.html" class="logo">YCS<span class="logo-dot">.</span></a>
+                <p class="footer-tag">Enterprise workflows by day. Full-stack builds by night.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chung-seng-yap-9478111bb/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:ycseng0398@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+        </div>
     </footer>
 
-    <button id="scrollToTopButton" onclick="scrollToTop()" aria-label="Scroll to top">
+    <button id="scrollToTopButton" class="to-top" type="button" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i>
     </button>
 

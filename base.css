@@ -1,0 +1,548 @@
+/* =========================================================
+   base.css — shared by every page
+   Tokens (dark + light), reset, navbar, buttons, chips,
+   footer, scroll-to-top, reveal and reduced-motion rules.
+   ========================================================= */
+
+/* ===== Tokens: dark (default) ===== */
+:root {
+    color-scheme: dark;
+
+    --bg: #05050f;
+    --bg-2: #0a0a1a;
+    --surface: rgba(255, 255, 255, 0.035);
+    --surface-2: rgba(255, 255, 255, 0.065);
+    --surface-solid: #0c0c1d;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+
+    --text: #f1f5f9;
+    --text-2: #a3b1c6;
+    --text-3: #7d8aa3;
+
+    --primary: #00d4ff;
+    --secondary: #7c3aed;
+    --gradient: linear-gradient(135deg, #00d4ff, #7c3aed);
+    --gradient-text: linear-gradient(135deg, #00d4ff 0%, #a855f7 100%);
+
+    --nav-bg: rgba(5, 5, 15, 0.55);
+    --nav-bg-solid: rgba(5, 5, 15, 0.9);
+    --shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.7);
+    --particle-rgb: 0, 212, 255;
+
+    /* how accent colours become readable text: 100% = as-is on dark */
+    --ink-base: #ffffff;
+    --ink-strength: 100%;
+
+    --radius-sm: 10px;
+    --radius: 16px;
+    --radius-lg: 24px;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --nav-h: 68px;
+
+    --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    /* project + platform accents */
+    --c-ai: #00d4ff;
+    --c-homeset: #e2b86b;
+    --c-nexauto: #f87171;
+    --c-biztrack: #60a5fa;
+    --c-brief: #e879f9;
+    --c-planner: #a78bfa;
+    --c-pfmt: #34d399;
+    --c-rewards: #f472b6;
+    --c-power: #818cf8;
+    --c-servicenow: #4ade80;
+    --c-decisions: #fb923c;
+
+    --accent: var(--primary);
+}
+
+/* ===== Tokens: light ===== */
+:root[data-theme="light"] {
+    color-scheme: light;
+
+    --bg: #f5f7fb;
+    --bg-2: #eceff6;
+    --surface: rgba(255, 255, 255, 0.78);
+    --surface-2: #ffffff;
+    --surface-solid: #ffffff;
+    --border: rgba(15, 23, 42, 0.09);
+    --border-strong: rgba(15, 23, 42, 0.2);
+
+    --text: #0b1020;
+    --text-2: #3f4b5f;
+    --text-3: #5b687d;
+
+    --primary: #0891b2;
+    --secondary: #7c3aed;
+    --gradient: linear-gradient(135deg, #06b6d4, #7c3aed);
+    --gradient-text: linear-gradient(135deg, #0891b2 0%, #7c3aed 100%);
+
+    --nav-bg: rgba(245, 247, 251, 0.7);
+    --nav-bg-solid: rgba(245, 247, 251, 0.94);
+    --shadow: 0 24px 50px -28px rgba(15, 23, 42, 0.32);
+    --particle-rgb: 8, 145, 178;
+
+    --ink-base: #000000;
+    --ink-strength: 58%;
+}
+
+/* ===== Accent helpers =====
+   Put .accent-<name> on any element; children can use
+   --accent (raw), --accent-ink (text), --accent-soft (fill)
+   and --accent-line (border). */
+.accent-ai { --accent: var(--c-ai); }
+.accent-homeset { --accent: var(--c-homeset); }
+.accent-nexauto { --accent: var(--c-nexauto); }
+.accent-biztrack { --accent: var(--c-biztrack); }
+.accent-brief { --accent: var(--c-brief); }
+.accent-planner { --accent: var(--c-planner); }
+.accent-pfmt { --accent: var(--c-pfmt); }
+.accent-rewards { --accent: var(--c-rewards); }
+.accent-power { --accent: var(--c-power); }
+.accent-servicenow { --accent: var(--c-servicenow); }
+.accent-decisions { --accent: var(--c-decisions); }
+
+:root,
+.accent-ai, .accent-homeset, .accent-nexauto, .accent-biztrack,
+.accent-brief, .accent-planner, .accent-pfmt, .accent-rewards,
+.accent-power, .accent-servicenow, .accent-decisions {
+    --accent-ink: color-mix(in srgb, var(--accent) var(--ink-strength), var(--ink-base));
+    --accent-soft: color-mix(in srgb, var(--accent) 12%, transparent);
+    --accent-line: color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+/* ===== Reset ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-h) + 16px);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--bg-2);
+    -webkit-text-size-adjust: 100%;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-2); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.35s var(--ease), color 0.35s var(--ease);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+a { color: inherit; text-decoration: none; transition: color 0.25s var(--ease); }
+ul, ol { list-style: none; }
+img, svg { max-width: 100%; display: block; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+::selection { background: color-mix(in srgb, var(--primary) 35%, transparent); }
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem; top: -100px;
+    z-index: 2000;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    background: var(--surface-solid);
+    border: 1px solid var(--border-strong);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.skip-link:focus { top: 1rem; }
+
+.visually-hidden {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    height: var(--nav-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0 2.5rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s var(--ease);
+}
+
+/* blur lives on a pseudo-element so the fixed mobile drawer
+   is not trapped inside the header's containing block */
+.navbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--nav-bg);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    transition: background 0.3s var(--ease);
+}
+
+.navbar.scrolled { border-bottom-color: var(--border); }
+.navbar.scrolled::before { background: var(--nav-bg-solid); }
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--text);
+}
+
+.logo-dot { color: var(--primary); }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-2);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -6px;
+    width: 0; height: 2px;
+    border-radius: 2px;
+    background: var(--gradient);
+    transition: width 0.3s var(--ease);
+}
+
+.nav-links a:hover,
+.nav-links a.active,
+.nav-links a[aria-current="page"] { color: var(--text); }
+
+.nav-links a:hover::after,
+.nav-links a.active::after,
+.nav-links a[aria-current="page"]::after { width: 100%; }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-2);
+    font-size: 0.9rem;
+    transition: color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.4s var(--ease);
+}
+
+.theme-toggle:hover { color: var(--text); border-color: var(--border-strong); transform: rotate(-20deg); }
+.theme-toggle .fa-moon { display: none; }
+:root[data-theme="light"] .theme-toggle .fa-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .fa-moon { display: inline-block; }
+
+.menu-toggle {
+    position: relative;
+    display: none;
+    width: 38px; height: 38px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 20px; height: 2px;
+    border-radius: 2px;
+    background: var(--text);
+    transition: transform 0.3s var(--ease), opacity 0.3s var(--ease);
+}
+
+.menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+/* ===== Buttons ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease), border-color 0.25s var(--ease), gap 0.25s var(--ease);
+}
+
+.btn i { font-size: 0.82em; }
+
+.btn-primary {
+    background: var(--gradient);
+    color: #fff;
+    box-shadow: 0 6px 24px -6px color-mix(in srgb, var(--primary) 55%, transparent);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px -8px color-mix(in srgb, var(--primary) 65%, transparent);
+}
+
+.btn-ghost {
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    background: var(--surface);
+}
+
+.btn-ghost:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* small accent-tinted link-buttons used on cards */
+.btn-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    transition: gap 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.btn-accent:hover {
+    gap: 12px;
+    background: color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.btn-accent i { font-size: 0.75em; }
+
+/* ===== Chips / tags ===== */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.chips li,
+.chip {
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 50px;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    white-space: nowrap;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+}
+
+.eyebrow::before {
+    content: '';
+    width: 22px; height: 1px;
+    background: currentColor;
+    opacity: 0.6;
+}
+
+.gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--bg-2);
+    padding: 48px 2rem 36px;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 18px 32px;
+}
+
+.footer-tag {
+    color: var(--text-3);
+    font-size: 0.88rem;
+    margin-top: 6px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 10px;
+    justify-self: end;
+}
+
+.footer-links a {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text-2);
+    transition: color 0.25s var(--ease), border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+.footer-copy {
+    grid-column: 1 / -1;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 0.78rem;
+    color: var(--text-3);
+}
+
+/* ===== Scroll to top ===== */
+.to-top {
+    position: fixed;
+    right: 2rem; bottom: 2rem;
+    z-index: 900;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--gradient);
+    color: #fff;
+    box-shadow: 0 8px 24px -6px color-mix(in srgb, var(--primary) 55%, transparent);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(14px);
+    transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0.3s;
+}
+
+.to-top.visible { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { transform: translateY(-3px); }
+
+/* ===== Reveal on scroll (only hidden when JS is running) =====
+   Uses the `translate` property, not `transform`, so it never
+   fights with hover lifts that use `transform`. */
+.js .reveal {
+    opacity: 0;
+    translate: 0 26px;
+    transition: opacity 0.7s var(--ease), translate 0.7s var(--ease);
+}
+
+.js .reveal.visible { opacity: 1; translate: none; }
+
+/* ===== Responsive: navbar ===== */
+@media (max-width: 860px) {
+    .navbar { padding: 0 1.25rem; }
+
+    .menu-toggle { display: flex; }
+
+    .nav-links {
+        position: fixed;
+        top: 0; right: 0;
+        z-index: 999;
+        width: min(78vw, 300px);
+        height: 100vh;
+        height: 100dvh;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.4rem;
+        background: var(--surface-solid);
+        border-left: 1px solid var(--border);
+        transform: translateX(100%);
+        visibility: hidden;
+        transition: transform 0.35s var(--ease), visibility 0.35s;
+    }
+
+    .nav-links.open { transform: none; visibility: visible; }
+    .nav-links a { font-size: 1.05rem; }
+    .nav-overlay.open { display: block; }
+
+    .footer-inner { grid-template-columns: 1fr; text-align: left; }
+    .footer-links { justify-self: start; }
+    .to-top { right: 1.1rem; bottom: 1.1rem; width: 40px; height: 40px; }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .js .reveal { opacity: 1; translate: none; }
+}

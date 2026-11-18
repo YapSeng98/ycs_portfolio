@@ -4,91 +4,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microsoft Power Platform — YCS</title>
+    <title>Power Platform Projects — Yap Chung Seng</title>
+    <meta name="description" content="Microsoft Power Platform solutions built by Yap Chung Seng — Power Apps on SharePoint with Power Automate approval workflows.">
+    <link rel="canonical" href="https://yapseng98.github.io/ycs_portfolio/powerApps.html">
+    <meta name="theme-color" content="#05050f">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Power Platform Projects — Yap Chung Seng">
+    <meta property="og:description" content="An SAP service helpdesk and a document management system on Power Apps, Power Automate and SharePoint.">
+    <meta property="og:url" content="https://yapseng98.github.io/ycs_portfolio/powerApps.html">
+    <meta property="og:image" content="https://yapseng98.github.io/ycs_portfolio/power.jpg">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+    <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('ycs-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="skills.css">
 </head>
 
-<body class="page-power">
+<body class="accent-power">
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="navbar" id="navbar">
+        <a href="index.html" class="logo" aria-label="YCS — home">YCS<span class="logo-dot">.</span></a>
+        <nav aria-label="Main">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#work">Work</a></li>
+                <li><a href="personal.html">Case Studies</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+                <i class="fas fa-sun" aria-hidden="true"></i><i class="fas fa-moon" aria-hidden="true"></i>
+            </button>
+            <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
     <div class="nav-overlay" id="nav-overlay"></div>
 
-    <nav class="navbar" id="navbar">
-        <div class="logo">YCS<span class="logo-dot">.</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#platforms">Platforms</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <main class="page-main" id="main">
 
-    <main class="page-main">
-        <div class="page-header">
-            <a href="index.html#platforms" class="back-link">
-                <i class="fas fa-arrow-left"></i> Back to Platforms
-            </a>
-            <span class="page-tag">Platform</span>
+        <header class="page-header">
+            <a href="index.html#work" class="back-link"><i class="fas fa-arrow-left"></i> Back to work</a>
+            <span class="eyebrow">Client work · Platform</span>
             <h1>Microsoft Power Platform</h1>
-            <p class="page-desc">Developed custom Power Apps solutions with SharePoint integration and Power Automate workflows — collaborating with stakeholders to gather requirements, troubleshoot issues, and ensure timely delivery.</p>
-        </div>
+            <p class="page-desc">Custom Power Apps with SharePoint data and Power Automate workflows — working with stakeholders to gather requirements, troubleshoot issues and deliver on time.</p>
+            <div class="page-meta">
+                <span><i class="fas fa-building"></i> YTL Cement Shared Services</span>
+                <span><i class="fas fa-calendar"></i> 2021 – 2023</span>
+                <span><i class="fas fa-folder-open"></i> 2 projects</span>
+            </div>
+        </header>
 
-        <div class="projects-section">
-            <h2 class="projects-heading"><i class="fas fa-folder-open"></i> Projects</h2>
+        <section aria-labelledby="projects-title">
+            <h2 class="projects-heading" id="projects-title"><i class="fas fa-folder-open"></i> Projects</h2>
             <div class="projects-grid">
 
-                <div class="project-card">
+                <article class="project-card reveal">
+                    <span class="project-num">01</span>
                     <h3>SAP Service Helpdesk</h3>
-                    <p>A three-module support system (Authorization, Incident, Change Request) for raising, tracking, and resolving SAP-related issues through a structured approval workflow.</p>
-                    <ul>
-                        <li>Ticket submission with category, priority, and auto-routing to the appropriate team</li>
-                        <li>Multi-level approval workflow for authorization and change requests</li>
-                        <li>Real-time tracking with Power Automate email notifications at every stage</li>
-                        <li>Support dashboard with open, in-progress, and resolved ticket visibility</li>
+                    <p>A three-module support system — Authorization, Incident and Change Request — for raising, tracking and resolving SAP issues through a structured approval workflow.</p>
+                    <ul class="dot-list">
+                        <li>Ticket submission with category, priority and auto-routing to the right team</li>
+                        <li>Multi-level approval for authorization and change requests</li>
+                        <li>Power Automate email notifications at every stage</li>
+                        <li>Support dashboard of open, in-progress and resolved tickets</li>
                         <li>All data stored in SharePoint lists</li>
                     </ul>
-                    <div class="project-tags">
-                        <span>Power Apps</span>
-                        <span>Power Automate</span>
-                        <span>SharePoint</span>
-                        <span>ITSM</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3>TP Document Management System</h3>
-                    <p>Centralised document management for company files, projects, vendors, and contracts — with automated PDF renaming to enforce standardised naming conventions on upload.</p>
-                    <ul>
-                        <li>Automated PDF renaming based on predefined naming format rules</li>
-                        <li>Dynamic folder structure organised by company, project type, and category</li>
-                        <li>Search and retrieve documents by company, project, or contract reference</li>
-                        <li>SharePoint integration for secure, permission-controlled document storage</li>
+                    <ul class="chips">
+                        <li>Power Apps</li>
+                        <li>Power Automate</li>
+                        <li>SharePoint</li>
+                        <li>ITSM</li>
                     </ul>
-                    <div class="project-tags">
-                        <span>Power Apps</span>
-                        <span>SharePoint</span>
-                        <span>PDF Automation</span>
-                        <span>Document Management</span>
-                    </div>
-                </div>
+                </article>
+
+                <article class="project-card reveal">
+                    <span class="project-num">02</span>
+                    <h3>TP Document Management System</h3>
+                    <p>Central document management for company files, projects, vendors and contracts — with automated PDF renaming that enforces naming conventions on upload.</p>
+                    <ul class="dot-list">
+                        <li>Automated PDF renaming from predefined naming rules</li>
+                        <li>Folder structure organised by company, project type and category</li>
+                        <li>Search by company, project or contract reference</li>
+                        <li>Permission-controlled storage in SharePoint</li>
+                    </ul>
+                    <ul class="chips">
+                        <li>Power Apps</li>
+                        <li>SharePoint</li>
+                        <li>PDF automation</li>
+                        <li>Document management</li>
+                    </ul>
+                </article>
 
             </div>
-        </div>
+        </section>
+
+        <nav class="page-next" aria-label="More work">
+            <span class="page-next-label">More work</span>
+            <a class="btn-accent accent-decisions" href="decisions.html">Decisions BPM <i class="fas fa-arrow-right"></i></a>
+            <a class="btn-accent accent-servicenow" href="serviceNow.html">ServiceNow <i class="fas fa-arrow-right"></i></a>
+            <a class="btn-accent accent-ai" href="personal.html">Case studies <i class="fas fa-arrow-right"></i></a>
+        </nav>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <a href="index.html" class="logo">YCS<span class="logo-dot">.</span></a>
+                <p class="footer-tag">Enterprise workflows by day. Full-stack builds by night.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/chung-seng-yap-9478111bb/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:ycseng0398@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="footer-copy">&copy; 2026 Yap Chung Seng. All rights reserved.</p>
+        </div>
     </footer>
 
-    <button id="scrollToTopButton" onclick="scrollToTop()" aria-label="Scroll to top">
+    <button id="scrollToTopButton" class="to-top" type="button" aria-label="Scroll to top">
         <i class="fas fa-chevron-up"></i>
     </button>
 
